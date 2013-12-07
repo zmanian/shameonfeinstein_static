@@ -87,6 +87,13 @@ img {
   border-top: 2px solid #222;
 }
 
+.well {
+  padding-top: 0px;
+  padding-bottom: 2px;
+  line-height: 1.8em;
+  margin-top: 20px;
+}
+
 @media print {
   .no-print, .no-print * {
     display: none !important;
