@@ -55,7 +55,13 @@ img {
 
 #signup-notice.affix {
   position: fixed;
-  height: 160px;
+  height: 100%;
+  /*width: 200px;*/
+}
+
+#signup-notice.affix-top {
+  position: fixed;
+  height: 100%;
   /*width: 200px;*/
 }
 
