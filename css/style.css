@@ -46,17 +46,17 @@ img {
   margin-left: 800px;
   text-align: center;
   font-size: 23px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-top: 250px;
-  border: 1px solid #eeefff;
+  /*padding-left: 10px;*/
+  /*padding-right: 10px;*/
+  /*padding-bottom: 10px;*/
+  /*padding-top: 250px;*/
+  /*border: 1px solid #eeefff;*/
 }
 
 #signup-notice.affix {
   position: fixed;
-  top: 0;
-  width: 200px;
+  height: 160px;
+  /*width: 200px;*/
 }
 
 #conclusion a {
