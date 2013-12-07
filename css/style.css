@@ -28,12 +28,9 @@ img {
   margin-top: 0px;
 }
 
-.footnote > a {
+.footnote {
   text-decoration: none;
   color: #111;
-}
-
-.footnote > a > p {
   font-size: 14px;
 }
 
