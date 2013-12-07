@@ -86,3 +86,10 @@ img {
   width: 100%;
   border-top: 2px solid #222;
 }
+
+@media print {
+  .no-print, .no-print * {
+    display: none !important;
+    visibility: hidden;
+  }
+}
