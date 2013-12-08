@@ -1,8 +1,12 @@
-body {
+/*body {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
+}*/
+
+body {
+  padding-bottom: 300px;
 }
 
 h1 {
@@ -33,6 +37,16 @@ img {
   text-decoration: none;
   color: #111;
   font-size: 14px;
+}
+
+.cta {
+  background: #666;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #eee;
+  z-index: 10000;
 }
 
 #signup-notice {
@@ -85,6 +99,10 @@ img {
 .divider {
   width: 100%;
   border-top: 2px solid #222;
+}
+
+.sign-it h2 {
+  margin-top: 0;
 }
 
 @media print {
