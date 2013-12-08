@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Gothic Ultra';
+  src: url('fonts/gothic_ultra_ot.otf');
+}
+
 body {
   max-width: 800px;
   margin-left: auto;
@@ -6,8 +11,9 @@ body {
 }
 
 h1 {
+  font-family: 'Gothic Ultra';
   text-align: center;
-  font-size: 43px;
+  font-size: 36px;
   font-weight: bold;
   margin-top: 55px;
 }
