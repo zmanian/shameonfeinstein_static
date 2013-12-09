@@ -10,6 +10,11 @@
     <script src='js/bootstrap.js'></script>
     <script src='js/misc.js'></script>
 
+
+    <script type='text/javascript' src='https://login.persona.org/include.js'></script>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-simple-login.js'></script>
+    <script type='text/javascript' src="js/petition.js"></script>
   </head>
   <body>
 <!--     <a href='#conclusion'><div id='signup-notice' class='affix right visible-lg no-print' data-spy='affix' data-offset-top='200'>CONSTITUENT SIGN-UP OPENING DECEMBER 15TH</div></a>
@@ -31,7 +36,7 @@
               <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
             </div>
 
-            <button type="submit" class="btn btn-lg btn-primary" style="margin-left: 20px;">Sign the letter</button>
+            <button id="submit_btn" type="submit" class="btn btn-lg btn-primary" style="margin-left: 20px;">Sign the letter</button>
           </form>
         </p>
       </div>
@@ -99,7 +104,6 @@
       <p class='footnote' id='footnote-2'>
         <a href='#footnote-2-root'>[2]</a> S. Res. 400, 94th Cong., 2d Sess. (1976).
       </p>
-
     </div>
   </body>
 </html>
