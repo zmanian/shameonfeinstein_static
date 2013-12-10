@@ -1,5 +1,5 @@
-$('#signup-notice').affix({
-  offset: {
-    top: 200
-  }
-});
+// $('#signup-notice').affix({
+//   offset: {
+//     top: 200
+//   }
+// });
