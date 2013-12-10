@@ -26,6 +26,7 @@ h1 {
 }
 
 p {
+  font-family: 'Gothic Ultra';
   text-align: justify;
   font-size: 19px;
 }
@@ -37,6 +38,7 @@ img {
 }
 
 .subtitle {
+  font-family: 'Gothic Ultra';
   font-size: 20px;
   text-align: center;
   margin-top: 0px;
