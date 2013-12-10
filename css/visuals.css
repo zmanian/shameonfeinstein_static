@@ -1,0 +1,46 @@
+svg {
+  font: 10px sans-serif;
+}
+
+.caption {
+  font-weight: bold;
+}
+
+.key path {
+  display: none;
+}
+
+.key line {
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.county-border {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .3;
+}
+
+.redacted {
+    color: black;
+    background-color: black;
+    white-space:nowrap;
+    -moz-transform: rotate(.8deg) skewx(-12deg);
+    -moz-box-shadow:3px 0 2px #444;
+    border:1px dotted #555;
+    background: -moz-linear-gradient(180deg, #000, #222);
+    display: inline;
+}
+
+/* Add a few more selectors with slightly varying styles */
+.redacted:first-child {
+    -moz-transform: rotate(-.8deg);
+}
+.redacted:first-child + .redacted {
+    -moz-transform: rotate(3deg);
+}
+
+/* "Highlighter" effect */
+.redacted::-moz-selection {
+    background:#e6ff3f;
+}
