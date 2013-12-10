@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-  font-family: 'Gothic Ultra';
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-size: 36px;
   font-weight: bold;
@@ -19,7 +19,7 @@ h1 {
 }
 
 p {
-  font-family: 'Gothic Ultra';
+  font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
   font-size: 19px;
 }
@@ -31,7 +31,7 @@ img {
 }
 
 .subtitle {
-  font-family: 'Gothic Ultra';
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   text-align: center;
   margin-top: 0px;
