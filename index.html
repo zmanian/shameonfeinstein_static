@@ -23,23 +23,72 @@
 <!--     <a href='#conclusion'><div id='signup-notice' class='affix right visible-lg no-print' data-spy='affix' data-offset-top='200'>CONSTITUENT SIGN-UP OPENING DECEMBER 15TH</div></a>
     <a href='#conclusion'><div id='signup-notice-mobile' class='sticky-header hidden-lg no-print'>CONSTITUENT SIGN-UP OPENING DECEMBER 15TH</div></a> -->
     
+    <div id="signup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+      <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Signup Page</h4>
+      </div>
+      <div class="modal-body">
+      <form>
+      <div class="form-group">
+      <label class="required" for="email">Email Address</label>
+      <input type="email" class="form-control required" id="email" placeholder="Enter email (Required)"/>
+      <span class="help-block">Shame on Feinsetein does not store your email. We validate and then discard your email.</span>
+      </div>
+      <div  class="form-group">
+      <label class="optional" for="zip">Zip</label>
+      <input type="email" class="form-control required" id="email" placeholder="Zipcode(CA Only) (Required)"/>
+      <span class="help-block">Shame On Feinstein is only collecting signatures from California Residents at this time</span>
+      </div>
+      <div class="form-group">
+      <label class="optional" for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter your Name (Optional)"/>
+      </div>
+
+      <br/>
+      <div class="checkbox">
+        <label class="checkbox"> 
+         <input type="checkbox" name="form-control" value="redacted">Redact?
+        </label>
+      <span class="help-block">Redacted Names will not be shown on the website but will be delivered to the Senator</span>
+      </form>
+      </div>
+      </div>
+
+      <div id="singaturedemo"></div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Sign the Letter</button>
+      
+      
+        
+           </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </div>     
+    
     <div class="cta">
       <div class="container text-center">
         <h2>Let your voice be heard- sign this letter!</h2>
         <p>
-          <form class="form-inline" role="form">
+          <!--<form class="form-inline" role="form">-->
 
-            <div class="form-group">
-              <label class="sr-only" for="email">Email address</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter email">
+          <!--  <div class="form-group">-->
+          <!--    <label class="sr-only" for="email">Email address</label>-->
+          <!--    <input type="email" class="form-control" id="email" placeholder="Enter email">-->
+          <!--  </div>-->
+
+          <!--  <div class="form-group">-->
+          <!--    <label class="sr-only" for="zipcode">Zip Code</label>-->
+          <!--    <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">-->
+          <!--  </div>-->
+            <div> <!-- Container needed to center button -->
+            <button id="submit_btn" type="submit" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#signup" onclick="$('#signup').modal();">Sign the letter</button>
             </div>
-
-            <div class="form-group">
-              <label class="sr-only" for="zipcode">Zip Code</label>
-              <input type="text" class="form-control" id="zipcode" placeholder="Zip Code">
-            </div>
-
-            <button id="submit_btn" type="submit" class="btn btn-lg btn-primary" style="margin-left: 20px;">Sign the letter</button>
+            
           </form>
         </p>
       </div>
