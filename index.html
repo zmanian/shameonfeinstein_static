@@ -32,19 +32,21 @@
       </div>
       <div class="modal-body">
       <form>
-      <div class="form-group">
-      <label class="required" for="email">Email Address</label>
-      <input type="email" class="form-control required" id="email" placeholder="Enter email (Required)"/>
-      <span class="help-block">Shame on Feinsetein does not store your email. We validate and then discard your email.</span>
+      <div id="email_group" class="form-group">
+      <label class="required" for="email">Email Address (Required)</label>
+      <input type="email" class="form-control required" id="email" placeholder="Enter email (Required)" onchange="window.petition.validEmail();"/>
+      <span id="email_help_block" class="help-block">Shame on Feinsetein does not store your email. We validate and then discard your email.</span>
       </div>
-      <div  class="form-group">
-      <label class="optional" for="zip">Zip</label>
-      <input type="email" class="form-control required" id="zip" placeholder="Zipcode(CA Only) (Required)"/>
-      <span class="help-block">Shame On Feinstein is only collecting signatures from California Residents at this time</span>
+      <div id="zip_group"  class="form-group">
+      <label class="optional" for="zip">Zip (Required)</label>
+      <input type="text" class="form-control required" id="zip" placeholder="Zipcode(CA Only) (Required)" onchange="window.petition.validZip();"/>
+      <span id="zip_help_block" class="help-block">Shame On Feinstein is only collecting signatures from California Residents at this time</span>
       </div>
-      <div class="form-group">
-      <label class="optional" for="name">Name</label>
+      <div id="name_group" class="form-group">
+      <label class="optional" for="name">Name(Optional)</label>
       <input type="text" class="form-control" id="name" placeholder="Enter your Name (Optional)"/>
+      <span id="name_help_block" class="help-block">If you submit your name, we will be able to deliver your demands to Senator Feinstein</span>
+
       </div>
 
       <br/>
