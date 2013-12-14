@@ -100,11 +100,11 @@ window.petition.validEmail = function(){
   var user_email = $('#email').val();
   if (isRFC822ValidEmail(user_email)){
    $('#email_group').addClass("has-success");
-   $('#email_help_block').text("Thank you for your email.");
+   $('#email_help_block').empty().append('<i class="fa fa-check-square-o"></i>');
   }
   else{
     $('#email_group').addClass("has-error");
-    $('#email_help_block').text("There is a typo in your email address");
+    $('#email_help_block').empty().text("There is a typo in your email address");
 
   }
 }
@@ -113,11 +113,11 @@ window.petition.validZip = function(){
   var user_zip = $('#zip').val();
   if (isValidCAZip(user_zip)){
    $('#zip_group').addClass("has-success");
-   $('#zip_help_block').text("Greetings Californian");
+   $('#zip_help_block').empty().append('<i class="fa fa-check-square-o"></i>');
   }
   else{
     $('#zip_group').addClass("has-error");
-    $('#zip_help_block').text("").append("Please sign this petition instead. <a href='http://www.freepress.net/NSA-spying'>Free Press:Don't Spy on Me </a>");
+    $('#zip_help_block').empty().append("Please sign this petition instead. <a href='http://www.freepress.net/NSA-spying'>Free Press:Don't Spy on Me </a>");
 
   }
 }
