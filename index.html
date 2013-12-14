@@ -50,7 +50,7 @@
       <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$('#cta').show();">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Signup Page</h4>
       </div>
       <div class="modal-body">
@@ -77,7 +77,9 @@
       <br/>
       <div class="checkbox">
         <label class="checkbox"> 
-         <input name="redacted" type="checkbox" name="form-control" value="1">Redact?
+         <input id="redacted" name="redacted" type="checkbox" name="form-control" value="1">Redact?
+         <input id="redactedHidden" name="redacted"  type='hidden' value='0'>
+
         </label>
       <span class="help-block">Redacted Names will not be shown on the website but will be delivered to the Senator</span>
       </form>

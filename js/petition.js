@@ -127,6 +127,12 @@ window.petition.submitSingature = function(){
 // 400 if the email is already in the database 
 // 420 if rate limiting is exceeded 
 // 500 if something goes wrong 
+  if($('#redacted').is(':checked')){ //Get 0 for redacted in the post instead of empty
+    $("#redactedHidden").prop('disabled', true);
+  }
+  else{
+    $("#redactedHidden").prop('disabled', false);
+  }
   if (!isRFC822ValidEmail($('#email').val()) && !isValidCAZip($('#zip').val())){
     alert("Please correct the errors in your form");
     return;
