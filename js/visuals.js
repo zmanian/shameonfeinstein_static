@@ -1,10 +1,38 @@
 
 window.viz ={};
+window.viz.signature_count = 0;
+window.viz.signature_count_redacted = 0;
+
 window.viz.SampleSingatureData =[{obfuscated: true, firstLen:4, lastLen:6, zip: 94065},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated: true, firstLen:4, lastLen:6, zip: 94065},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated: true, firstLen:4, lastLen:6, zip: 94065},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated:false, firstName: "Zaki", lastName:"Manian", zip :94022},{obfuscated: true, firstLen:4, lastLen:6, zip: 94065}  ];
 
 
-window.viz.updateSignatureCount = function(){
-  $('#sig_number').text(viz.SampleSingatureData.length).fadeIn("slow"); 
+
+window.viz.getSignatures = function(){
+  $.ajax({
+    url:"/signatures",
+    dataType:'json',
+  }).success(function(data){
+    console.log(data);
+    window.viz.signature_count = data.length;
+    updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
+  });
+}
+
+window.viz.getSingaturesRedacted = function(){
+  $.ajax({
+    url:"/signatures_redacted",
+    dataType:'json',
+  }).success(function(data){
+    console.log(data);
+    window.viz.signature_count_redacted = data.length;
+    updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
+  });
+
+}
+
+
+window.viz.updateSignatureCount = function(total_count){
+  $('#sig_number').text(total_count).fadeIn("slow"); 
 };
 
 window.viz.displaySignature = function(sigdata){
@@ -44,7 +72,7 @@ window.viz.orderSignatures = function(){
 }
 
 $( document ).ready( function(){
-  viz.updateSignatureCount();
+  // viz.updateSignatureCount();
   viz.orderSignatures();
   // $('.alert').hide();
 } );
