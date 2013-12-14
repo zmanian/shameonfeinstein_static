@@ -54,20 +54,22 @@
         <h4 class="modal-title" id="myModalLabel">Signup Page</h4>
       </div>
       <div class="modal-body">
-      <form id="signatureForm">
+      <form id="signatureForm" method="POST">
       <div id="email_group" class="form-group">
       <label class="required" for="email">Email Address (Required)</label>
-      <input type="email" class="form-control required" id="email" placeholder="Enter email (Required)" onchange="window.petition.validEmail();"/>
+      <input name= "email" type="email" class="form-control required" id="email" placeholder="Enter email (Required)" onchange="window.petition.validEmail();"/>
       <span id="email_help_block" class="help-block">Shame on Feinsetein does not store your email. We validate and then discard your email.</span>
       </div>
       <div id="zip_group"  class="form-group">
       <label class="optional" for="zip">Zip (Required)</label>
-      <input type="text" class="form-control required" id="zip" placeholder="Zipcode(CA Only) (Required)" onchange="window.petition.validZip();"/>
+      <input name="zip_code" type="text" class="form-control required" id="zip" placeholder="Zipcode(CA Only) (Required)" onchange="window.petition.validZip();"/>
       <span id="zip_help_block" class="help-block">Shame On Feinstein is only collecting signatures from California Residents at this time</span>
       </div>
-      <div id="name_group" class="form-group">
-      <label class="optional" for="name">Name(Optional)</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter your Name (Optional)"/>
+      <div id="name_group" class="form-inline">
+      <label class="optional" for="name">First Name</label>
+      <input name="first" type="text" class="form-control" id="first_name" placeholder="Enter your First Name (Optional)"/>
+      <label class="optional" for="name">Last Name</label>
+      <input name="last" type="text" class="form-control" id="last_name" placeholder="Enter your Last Name (Optional)"/>
       <span id="name_help_block" class="help-block">If you submit your name, we will be able to deliver your demands to Senator Feinstein</span>
 
       </div>
@@ -75,7 +77,7 @@
       <br/>
       <div class="checkbox">
         <label class="checkbox"> 
-         <input type="checkbox" name="form-control" value="redacted">Redact?
+         <input name="redacted" type="checkbox" name="form-control" value="redacted">Redact?
         </label>
       <span class="help-block">Redacted Names will not be shown on the website but will be delivered to the Senator</span>
       </form>

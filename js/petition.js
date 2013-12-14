@@ -128,6 +128,7 @@ window.petition.submitSingature = function(){
 // 420 if rate limiting is exceeded 
 // 500 if something goes wrong 
   $('#signup').modal('hide');
+  console.log($('#signatureForm').serialize());
   $.ajax({
     url:"/sign",
     type:"post",
