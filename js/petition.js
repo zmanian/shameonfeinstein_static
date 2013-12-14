@@ -127,7 +127,38 @@ window.petition.submitSingature = function(){
 // 400 if the email is already in the database 
 // 420 if rate limiting is exceeded 
 // 500 if something goes wrong 
+  $('#signup').modal('hide');
+  $.ajax({
+    url:"/sign",
+    type:"post",
+    data:$('#signatureForm').serialize(),
+    statusCode:{
+      200:function(){
+        $('#checkoyouremail').show();
+      },
+      400:function(){
+        $('#alreadysigned').show();
+      },
+      420:function(){
+        $('#toomanysignatures').show();
+      },
+      500:function(){
+        $('#somethingwentwrong').show();
+      }
+    }
+  }
+  ).fail(function(){$('#somethingwentwrong').show();}) ;
+
+
 }
+
+$(function(){
+    $("[data-hide]").on("click", function(){
+        $("." + $(this).attr("data-hide")).hide();
+        // -or-, see below
+        // $(this).closest("." + $(this).attr("data-hide")).hide();
+    });
+});
 
 
 // $(document).ready(function() {

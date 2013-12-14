@@ -23,6 +23,27 @@
 <!--     <a href='#conclusion'><div id='signup-notice' class='affix right visible-lg no-print' data-spy='affix' data-offset-top='200'>CONSTITUENT SIGN-UP OPENING DECEMBER 15TH</div></a>
     <a href='#conclusion'><div id='signup-notice-mobile' class='sticky-header hidden-lg no-print'>CONSTITUENT SIGN-UP OPENING DECEMBER 15TH</div></a> -->
     
+    <div id="checkoyouremail" class="alert alert-success fade in">
+        <button type="button" class="close" data-hide="alert" aria-hidden="true">X</button>
+        <strong>Thanks for Signing</strong> We've sent you an email. Please check your inbox to complete the process
+    </div>
+    
+    <div id="alreadysigned" class="alert alert-danger fade in">
+        <button type="button" class="close" data-hide="alert" aria-hidden="true">X</button>
+        <strong>We've already got a signature for your email. Thanks</strong>
+    </div>
+    
+    <div id="toomanysignatures" class="alert alert-danger fade in">
+        <button type="button" class="close" data-hide="alert" aria-hidden="true">X</button>
+        <strong>You appear to be overloading our servers. Please stop.</strong>
+    </div>
+    
+    <div id="somethingwentwrong" class="alert alert-danger fade in">
+        <button type="button" class="close" data-hide="alert" aria-hidden="true">X</button>
+        <strong>Something went wrong. </strong> Let us know on <a href="https://github.com/ShameOnFeinstein/shameonfeinstein.github.io/issues">Github</a>
+    </div>
+    
+    
     <div id="signup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
       <div class="modal-dialog">
     <div class="modal-content">
@@ -31,7 +52,7 @@
         <h4 class="modal-title" id="myModalLabel">Signup Page</h4>
       </div>
       <div class="modal-body">
-      <form>
+      <form id="signatureForm">
       <div id="email_group" class="form-group">
       <label class="required" for="email">Email Address (Required)</label>
       <input type="email" class="form-control required" id="email" placeholder="Enter email (Required)" onchange="window.petition.validEmail();"/>
@@ -63,7 +84,7 @@
       
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Sign the Letter</button>
+        <button type="button" class="btn btn-primary" onclick="window.petition.submitSingature()">Sign the Letter</button>
       
       
         
