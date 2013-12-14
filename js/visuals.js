@@ -14,7 +14,7 @@ window.viz.getSignatures = function(){
   }).success(function(data){
     console.log(data);
     window.viz.signature_count = data.length;
-    updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
+    viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
   });
 }
 
@@ -25,7 +25,7 @@ window.viz.getSingaturesRedacted = function(){
   }).success(function(data){
     console.log(data);
     window.viz.signature_count_redacted = data.length;
-    updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
+    viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
   });
 
 }
