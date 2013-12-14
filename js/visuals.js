@@ -14,6 +14,7 @@ window.viz.getSignatures = function(){
   }).success(function(data){
     console.log(data);
     window.viz.signature_count = data.length;
+    window.viz.signature_data = data;
     viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
   });
 }
@@ -25,6 +26,7 @@ window.viz.getSingaturesRedacted = function(){
   }).success(function(data){
     console.log(data);
     window.viz.signature_count_redacted = data.length;
+    window.viz.signature_redacted_data = data;
     viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
   });
 
@@ -72,7 +74,8 @@ window.viz.orderSignatures = function(){
 }
 
 $( document ).ready( function(){
-  // viz.updateSignatureCount();
+  viz.getSignatures();
+  viz.getSingaturesRedacted();
   viz.orderSignatures();
   // $('.alert').hide();
 } );
