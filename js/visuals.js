@@ -35,7 +35,11 @@ window.viz.getSingaturesRedacted = function(){
 
 window.viz.updateSignatureCount = function(total_count){
   $('#sig_number').text(total_count).fadeIn("slow"); 
+  $('#sig_number_2').text(total_count).fadeIn("slow"); 
 };
+
+
+
 
 window.viz.displaySignature = function(sigdata){
   if (sigdata.obfuscated === undefined){
@@ -76,6 +80,7 @@ window.viz.orderSignatures = function(){
 $( document ).ready( function(){
   viz.getSignatures();
   viz.getSingaturesRedacted();
-  viz.orderSignatures();
+  // viz.orderSignatures();
   // $('.alert').hide();
 } );
+
