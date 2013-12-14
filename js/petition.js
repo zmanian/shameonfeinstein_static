@@ -152,7 +152,7 @@ window.petition.submitSingature = function(){
       }
     }
   }
-  ).fail(function(){$('#somethingwentwrong').show();}) ;
+  ).fail(function(){$('#somethingwentwrong').show(); $('#cta').show()}) ;
 
 
 }
