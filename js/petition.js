@@ -134,7 +134,7 @@ window.petition.submitSingature = function(){
   $('#signup').modal('hide');
   console.log($('#signatureForm').serialize());
   $.ajax({
-    url:"5000:/sign",
+    url:"/sign",
     type:"post",
     data:$('#signatureForm').serialize(),
     statusCode:{
