@@ -147,7 +147,7 @@ window.petition.submitSingature = function(){
       200:function(){
         $('#checkoyouremail').show();
       },
-      400:function(){
+      401:function(){
         $('#alreadysigned').show();
       },
       420:function(){

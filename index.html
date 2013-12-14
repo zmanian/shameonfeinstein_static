@@ -27,7 +27,7 @@
     
     <div id="checkoyouremail" class="alert alert-success fade in">
         <button type="button" class="close" data-hide="alert" aria-hidden="true">X</button>
-        <strong>Thanks for Signing</strong> We've sent you an email. Please check your inbox to complete the process
+        <strong>Thanks for Signing</strong> We've sent you an email. Please check your inbox to complete the process.
     </div>
     
     <div id="alreadysigned" class="alert alert-danger fade in">
@@ -51,39 +51,57 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$('#cta').show();">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Signup Page</h4>
+        <h4 class="modal-title" id="myModalLabel">Sign The Shame On Feinstein Letter</h4>
       </div>
       <div class="modal-body">
       <form id="signatureForm" method="POST">
       <div id="email_group" class="form-group">
       <label class="required" for="email">Email Address (Required)</label>
-      <input name= "email" type="email" class="form-control required" id="email" placeholder="Enter email (Required)" onchange="window.petition.validEmail();"/>
-      <span id="email_help_block" class="help-block">Shame on Feinsetein does not store your email. We validate and then discard your email.</span>
+      <input name= "email" type="email" class="form-control required" id="email" placeholder="Email Address" onchange="window.petition.validEmail();"/>
+      <span id="email_help_block" class="help-block">We validate and then discard your email.</span>
       </div>
       <div id="zip_group"  class="form-group">
-      <label class="optional" for="zip">Zip (Required)</label>
-      <input name="zip_code" type="text" class="form-control required" id="zip" placeholder="Zipcode(CA Only) (Required)" onchange="window.petition.validZip();"/>
-      <span id="zip_help_block" class="help-block">Shame On Feinstein is only collecting signatures from California Residents at this time</span>
+      <label class="optional" for="zip">Zip Code (Required)</label>
+      <input name="zip_code" type="text" class="form-control required" id="zip" placeholder="Zip Code" onchange="window.petition.validZip();"/>
+      <span id="zip_help_block" class="help-block">The letter is from California voters.</span>
       </div>
-      <div id="name_group" class="form-inline">
-      <label class="optional" for="name">First Name</label>
-      <input name="first" type="text" class="form-control" id="first_name" placeholder="Enter your First Name (Optional)"/>
-      <label class="optional" for="name">Last Name</label>
-      <input name="last" type="text" class="form-control" id="last_name" placeholder="Enter your Last Name (Optional)"/>
-      <span id="name_help_block" class="help-block">If you submit your name, we will be able to deliver your demands to Senator Feinstein</span>
-
-      </div>
-
       <br/>
-      <div class="checkbox">
+      <div id="name_group" class="form-inline">
+      <div class="form-group">
+      <label class="optional sr-only" for="name">First Name</label>
+      <input name="first" type="text" class="form-control" id="first_name" placeholder="First Name (Optional)"/>
+      </div>
+      <div class="form-group">
+      <label class="optional sr-only" for="name">Last Name</label>
+      <input name="last" type="text" class="form-control" id="last_name" placeholder="Last Name (Optional)"/>
+
+
+        
+        
+      </div>
+        <div class="checkbox">
         <label class="checkbox"> 
-         <input id="redacted" name="redacted" type="checkbox" name="form-control" value="1">Redact?
+         <input id="redacted" name="redacted" type="checkbox" name="form-control" value="1"> Redact?
          <input id="redactedHidden" name="redacted"  type='hidden' value='0'>
 
         </label>
-      <span class="help-block">Redacted Names will not be shown on the website but will be delivered to the Senator</span>
-      </form>
+      <!--<span class="help-block">Redacted Names will not be shown on the website but will be delivered to the Senator</span>-->
       </div>
+      
+      <span id="name_help_block" class="help-block">If you include your name, we will be able to show your signature to Senator Feinstein. Redacted names will not be shown on the website.</span>
+
+      </div>
+
+      <!--<div class="checkbox">-->
+      <!--  <label class="checkbox"> -->
+      <!--   <input id="redacted" name="redacted" type="checkbox" name="form-control" value="1">Redact?-->
+      <!--   <input id="redactedHidden" name="redacted"  type='hidden' value='0'>-->
+
+      <!--  </label>-->
+      <!--<span class="help-block">Redacted Names will not be shown on the website but will be delivered to the Senator</span>-->
+      <!--</div>-->
+
+      </form>
       </div>
 
       <div id="singaturedemo"></div>
@@ -101,7 +119,7 @@
     
     <div id="cta" class="cta">
       <div class="container text-center">
-        <h2>Let your voice be heard - sign this letter!</h2>
+        <!--<h2>Let your voice be heard - sign this letter!</h2>-->
         <p>
           <!--<form class="form-inline" role="form">-->
 
