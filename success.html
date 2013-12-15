@@ -7,187 +7,39 @@
     <link rel='stylesheet' href='css/style.css' media='screen, print' type='text/css'>
     <link rel='stylesheet' href='css/visuals.css' type='text/css'>
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel='stylesheet' href='css/social_share_common.css' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 
     <script src='js/jquery-1.10.2.min.js'></script>
     <script src='js/d3.v3.min.js'></script>
-
-    <script src='js/socialshare/socialshareprivacy.js'></script>
-    <script src='js/socialshare/facebook.js'></script>
-    <script src='js/socialshare/twitter.js'></script>
-    <script src='js/socialshare/gplus.js'></script>
-    
     <script src='js/jquery-migrate-1.2.1.min.js'></script>
     <script src='js/bootstrap.js'></script>
     <script src='js/misc.js'></script>
     <script src='js/visuals.js'></script>
-    <script src='js/initindex.js'></script>
-
-
 
     <script type='text/javascript' src="js/petition.js"></script>
   </head>
   <body>
+  <div class="topbar"></div>
+
 <!--     <a href='#conclusion'><div id='signup-notice' class='affix right visible-lg no-print' data-spy='affix' data-offset-top='200'>CONSTITUENT SIGN-UP OPENING DECEMBER 15TH</div></a>
     <a href='#conclusion'><div id='signup-notice-mobile' class='sticky-header hidden-lg no-print'>CONSTITUENT SIGN-UP OPENING DECEMBER 15TH</div></a> -->
-      <div class="topbar"></div>
     
-     <div id="checkoyouremail" class="alert alert-success fade in">
-          <button type="button" class="close" data-hide="alert" aria-hidden="true">X</button>
-         <strong>Thanks for Signing</strong> We've sent you an email. Please check your inbox to complete the process.
-     </div>
-     
-     <div id="alreadysigned" class="alert alert-danger fade in">
-         <button type="button" class="close" data-hide="alert" aria-hidden="true">X</button>
-         <strong>We've already got a signature for your email. Thanks</strong>
-     </div>
-     
-     <div id="toomanysignatures" class="alert alert-danger fade in">
-         <button type="button" class="close" data-hide="alert" aria-hidden="true">X</button>
-         <strong>You appear to be overloading our servers. Please stop.</strong>
-     </div>
-     
-     <div id="somethingwentwrong" class="alert alert-danger fade in">
-         <button type="button" class="close" data-hide="alert" aria-hidden="true">X</button>
-         <strong>Something went wrong. </strong> Let us know on <a href="https://github.com/ShameOnFeinstein/shameonfeinstein.github.io/issues">Github</a>
-      </div>
-
-    <div id="credits" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">credits</h4>
-      </div>
-      <div class="modal-body">
-        <p>Several programmers donated their time to this project, including:</p>
-        <p><a href="https://github/zmanian">Zaki Manian</a></p>
-        <p><a href="http://www.paulsawaya.com/" >Paul Sawaya</a>
-        <p><a href="http://shutt.in"> John Shutt </a></p>
-        <p><a href="http://jehantremback.com">Jehan Tremback</a></p>
-        <p>Jamie</p>  
-        <p><a mailto="allison.filice@gmail.com">Allison Filice</a> (Design)</p>
-        <p>Thank you to <a href="https://noisebridge.net/">Noisebridge</a> for giving us a space to work.</p>
-
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-    
-<div id="safe" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">is this safe?</h4>
-      </div>
-      <div class="modal-body">
-        <p>On the one hand, people want to express their political views in a powerful way, but on the other hand, they may put themselves at risk of surveillance by doing so. At the very least, we think you should be able to anonymously stand up and be counted. Therefore:</p>
-        <ul>
-          <li>We created three tiers of participation: 1) anonymous signatures associated with a zip code, 2) names associated with zip codes, but not visible on the web, 3) names associated with zip codes that are visible on the web.</li>
-          <li>When you submit information via the form, it is transmitted securely to our server (encrypted end to end).</li>
-          <li> We are not storing any email addresses. We use the email address to send a verification email, and give your email address a unique identifier. This cannot be decoded to discover your email address, but can be used to make sure there is only one signature per person.</li>
-          <li>The social media buttons do not send information to Facebook or Twitter until you "turn them on" by clicking on them. 
-</li>
-        </ul>
-        <p>These security measures do not protect against privacy invasions via your own computer or from the inevitable vulnerabilities of servers.</p>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-    
-    
-    
-    
-    <div id="signup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-      <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$('#cta').show();">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Sign The Shame On Feinstein Letter</h4>
-      </div>
-      <div class="modal-body">
-      <form id="signatureForm" method="POST">
-      <div id="email_group" class="form-group">
-      <label class="required" for="email">Email Address (Required)</label>
-      <input name= "email" type="email" class="form-control required" id="email" placeholder="Email Address" onchange="window.petition.validEmail();"/>
-      <span id="email_help_block" class="help-block">We validate and then discard your email.</span>
-      </div>
-      <div id="zip_group"  class="form-group">
-      <label class="optional" for="zip">Zip Code (Required)</label>
-      <input name="zip_code" type="text" class="form-control required" id="zip" placeholder="Zip Code" onchange="window.petition.validZip();"/>
-      <span id="zip_help_block" class="help-block">The letter is from California voters.</span>
-      </div>
-      <br/>
-      <div id="name_group" class="form-inline">
-      <div class="form-group">
-      <label class="optional sr-only" for="name">First Name</label>
-      <input name="first" type="text" class="form-control" id="first_name" placeholder="First Name (Optional)"/>
-      </div>
-      <div class="form-group">
-      <label class="optional sr-only" for="name">Last Name</label>
-      <input name="last" type="text" class="form-control" id="last_name" placeholder="Last Name (Optional)"/>
-
-
-        
-        
-      </div>
-        <div class="checkbox">
-        <label class="checkbox"> 
-         <input id="redacted" name="redacted" type="checkbox" name="form-control" value="1"> 
-
-         <input id="redactedHidden" name="redacted"  type='hidden' value='0'>hide name </label>
-
-      <!--<span class="help-block">Redacted Names will not be shown on the website but will be delivered to the Senator</span>-->
-      </div>
-
-      <span id="name_help_block" class="help-block">If you include your name, we will be able to show your signature to Senator Feinstein. Redacted names will not be shown on the website.</span>
-
-      </div>
-
-      </form>
-      </div>
-
-      <div id="singaturedemo"></div>
-      
-      <div class="modal-footer">
-        <button type="button" class="newblue btn btn-default" data-dismiss="modal" onclick="$('#cta').show();">CLOSE</button>
-        <button type="button" class="newblue btn btn-primary" onclick="window.petition.submitSingature()" style="background-color:white;">SIGN THE LETTER</button>
-      
-      
-        
-           </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-  </div>     
-    
-    <div id="cta" class="cta not_letter">
+    <div id="checkoyouremail" class="alert alert-success fade in">
+        <button type="button" class="close" data-hide="alert" aria-hidden="true">X</button>
+        <strong>Thanks for signing the letter. </strong> 
+    </div>
+        <div id="cta" class="cta">
 
       <div class="container text-center">
         <!--<h2>Let your voice be heard - sign this letter!</h2>-->
-
-        <p>
             <div> <!-- Container needed to center button -->
-            <button id="submit_btn" type="submit" class=" newblue btn btn-lg btn-primary petition_button not_letter" data-toggle="modal" data-target="#signup" onclick="$('#signup').modal();$('#cta').hide();" style="color: white;
-border-color: white;">SIGN THE LETTER</button>
-            <br/>
-              <div class="share" style="
-    margin-left: 35%;
-" ></div>
-
-        <a href="#safe" onclick="$('#safe').modal();" >is this safe</a>
-     |   <a href="#credits" onclick="$('#credits').modal();" >credits</a>
+        <a href="#safe" onclick="$('#credits').modal();" >Credits</a>   |   
+        <a href="#credits" onclick="$('#safe').modal();" >Is this safe?</a>
             </div>
             
         </p>
       </div>
     </div>
+
     <div class="row not_letter" style="padding-bottom:100px;padding-top:100px">
     <div class="col-md-12">
       <img src="img/ShameOnFeinstein_Logo.png ">
@@ -198,7 +50,6 @@ border-color: white;">SIGN THE LETTER</button>
       <h2 class="subtitle">Deploring Her Persistent Denial of the </h2> <h2 class="subtitle"> Current Crisis in Surveillance Policy</h2>
       <div class="padding"></div>
       <div class="text-center">
-      <button id="submit_btn" type="submit" class="newblue btn btn-lg btn-primary petition_button not_letter" data-toggle="modal" data-target="#signup" onclick="$('#signup').modal();$('#cta').hide();" style="background-color: white;">SIGN THE LETTER</button>
 <p class="sig-counter not_letter" style="text-align: center;">Join <span id="sig_number" style="text-align: center;" class ="not_letter">Some</span> Californians</p>
   
     </div>

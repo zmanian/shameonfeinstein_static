@@ -1,27 +1,44 @@
+
 @font-face {
   font-family: 'Gothic Ultra';
-  src: url('fonts/gothic_ultra_ot.otf');
+  src: url('../fonts/gothic_ultra_ot.otf');
 }
 
+
 body {
+
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
 }
 
+body {
+  padding-bottom: 300px;
+}
+
 h1 {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  font-size: 36px;
+  font-size: 56px;
   font-weight: bold;
   margin-top: 55px;
+}
+
+h2 {
 }
 
 p {
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
-  font-size: 19px;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+strong{
+  text-align: justify;
+  font-size: 18px;
+  line-height: 1.5em;
 }
 
 img {
@@ -30,9 +47,38 @@ img {
   margin-bottom: 10px;
 }
 
+.newblue:hover{
+  background:#00aeef;
+  border-color:#00aeef;
+}
+
+.newblue{
+  color:#00aeef;
+  border-color:#00aeef;
+}
+
+.not_letter {  
+  font-family: 'Montserrat', sans-serif;
+  font-weight:700;
+  
+}
+
+*{  
+  font-family: 'Ubuntu','Arial', sans-serif;
+  font-weight:400;
+  }
+
+
+.letter{
+  font-family: 'Ubuntu','Arial', sans-serif;
+  font-weight:400;
+}
+
+
 .subtitle {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:700;
+  font-size: 25px;
   text-align: center;
   margin-top: 0px;
 }
@@ -43,9 +89,23 @@ img {
   font-size: 14px;
 }
 
-.letter-text{
-  padding-bottom:100px;
+.cta {
+  background: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #eee;
+  z-index: 10000;
+  
 }
+.petition_button{
+  background: none;
+  color: #00aeef;
+}
+
+.cta a:link {color:white;}      /* unvisited link */
+.cta a:visited {color:white;}}      /* unvisited link */
 
 #signup-notice {
   display: block;
@@ -95,15 +155,44 @@ img {
 }
 
 .divider {
-  width: 100%;
-  border-top: 2px solid #222;
+  width: 10%;
+  border-top: 10px solid #222;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.padding{
+  height:30px;
 }
 
 .well {
-  padding-top: 0px;
-  padding-bottom: 2px;
-  line-height: 1.8em;
-  margin-top: 20px;
+  position:absolute;
+  left:0;
+  right:0;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #d1d0d0;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  
+  }
+  
+  .topbar{
+    position:absolute;
+    background-color: black;
+    left:0;
+    right:0;
+    top:0;
+    padding:11px;
+  }
+  
+.sign-it h2 {
+  margin-top: 0;
 }
 
 .cta {
@@ -122,4 +211,12 @@ img {
     display: none !important;
     visibility: hidden;
   }
+}
+
+.sig-counter {
+  /*font-family: 'Arial', sans-serif;*/
+  text-align: right;
+  font-size: 20px;
+  margin-top: 30px;
+  color: #6F6F6F;
 }
