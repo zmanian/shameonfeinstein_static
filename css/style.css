@@ -61,7 +61,11 @@ img {
   right: 0;
   color: #eee;
   z-index: 10000;
+  
 }
+
+.cta a:link {color:white;}      /* unvisited link */
+.cta a:visited {color:white;}}      /* unvisited link */
 
 #signup-notice {
   display: block;

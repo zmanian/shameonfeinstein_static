@@ -29,6 +29,53 @@
         <strong>Thanks for signing the letter</strong> 
     </div>
     
+    <div id="credits" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Credis</h4>
+      </div>
+      <div class="modal-body">
+        <p>Several programmers donated their time to this project, including:</p>
+        <p>Zaki Manian <a href="https://github/zmanian">GitHub</a></p>
+        <p>Paul Sawaya <a href="http://www.paulsawaya.com/" >http://www.paulsawaya.com/</a>
+        <p>John Shutt <a href="http://shutt.in"> http://shutt.in/</a></p>
+        <p>Jehan Tremback <a href="http://jehantremback.com">http://jehantremback.com/</a></p>
+        <p>Jamie Brim <a href="http://https://angel.co/jwb">http://https://angel.co/jwb</a></p>  
+        <p>Denise Michelle Myers</p>
+        <p>Allison Filice <a mailto="allison.filice@gmail.com">Email</a></p>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    
+<div id="safe" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Is this safe?</h4>
+      </div>
+      <div class="modal-body">
+        <p>On the one hand, people want to express their political views in a powerful way, but on the other hand, they may put themselves at risk of surveillance by doing so. At the very least, we think you should be able to anonymously stand up and be counted. Therefore:</p>
+        <ul>
+          <li>We created three tiers of participation: 1) anonymous signatures associated with a zip code, 2) names associated with zip codes, but not visible on the web, 3) names associated with zip codes that are visible on the web.</li>
+          <li>When you submit information via the form, it is transmitted securely to our server (encrypted end to end). The database of names and zip codes is two-factor authenticated and only accessible by private key.</li>
+          <li> We are not storing any email addresses. We use the email address to send a verification email, and give your email address a unique identifier. This cannot be decoded to discover your email address, but can be used to make sure there is only one signature per person.</li>
+        </ul>
+        <p>These security measures are the bare minimum. They do not protect against many potential privacy invasions, including your browser, keyloggers on your computer, Linode’s (server) own security and willingness to fight national security letters, the security issues tied to your email account, among others. We can’t guarantee your info is safe, but we did our best.</p>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    
+    
+    
     
     <div id="signup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
       <div class="modal-dialog">
@@ -93,11 +140,18 @@
   </div>     
     
     <div id="cta" class="cta">
+    <div class="container text-left">
+
+    </div>
       <div class="container text-center">
         <!--<h2>Let your voice be heard - sign this letter!</h2>-->
+
         <p>
             <div> <!-- Container needed to center button -->
             <button id="submit_btn" type="submit" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#signup" onclick="$('#signup').modal();$('#cta').hide();">Sign the letter</button>
+            <br/>
+        <a href="" onclick="$('#credits').modal();" >Credits</a>   |   
+        <a href="" onclick="$('#safe').modal();" >Is this safe?</a>
             </div>
             
         </p>
