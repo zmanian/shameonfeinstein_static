@@ -152,6 +152,15 @@ img {
   
   }
   
+  .topbar{
+    position:absolute;
+    background-color: black;
+    left:0;
+    right:0;
+    top:0;
+    padding:11px;
+  }
+  
 .sign-it h2 {
   margin-top: 0;
 }
