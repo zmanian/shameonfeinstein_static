@@ -104,6 +104,11 @@ img {
   color: #00aeef;
 }
 
+.petition_button :hover{
+  background: none;
+  color: #00aeef;
+}
+
 .cta a:link {color:white;}      /* unvisited link */
 .cta a:visited {color:white;}}      /* unvisited link */
 

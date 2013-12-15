@@ -161,8 +161,8 @@
       <div id="singaturedemo"></div>
       
       <div class="modal-footer">
-        <button type="button" class="newblue btn btn-default" data-dismiss="modal" onclick="$('#cta').show();">CLOSE</button>
-        <button type="button" class="newblue btn btn-primary" onclick="window.petition.submitSingature()" style="background-color:white;">SIGN THE LETTER</button>
+        <button type="button" class="newblue petition_button btn btn-default" data-dismiss="modal" onclick="$('#cta').show();">CLOSE</button>
+        <button type="button" class="newblue petition_button btn btn-primary" onclick="window.petition.submitSingature()" style="">SIGN THE LETTER</button>
       
       
         
@@ -199,7 +199,7 @@ border-color: white;">SIGN THE LETTER</button>
       <h2 class="subtitle">Deploring Her Persistent Denial of the </h2> <h2 class="subtitle"> Current Crisis in Surveillance Policy</h2>
       <div class="padding"></div>
       <div class="text-center">
-      <button id="submit_btn" type="submit" class="newblue btn btn-lg btn-primary petition_button not_letter" data-toggle="modal" data-target="#signup" onclick="$('#signup').modal();$('#cta').hide();" style="background-color: white;">SIGN THE LETTER</button>
+      <button id="submit_btn" type="submit" class="newblue btn btn-lg btn-primary petition_button not_letter" data-toggle="modal" data-target="#signup" onclick="$('#signup').modal();$('#cta').hide();" style="">SIGN THE LETTER</button>
 <p class="sig-counter not_letter" style="text-align: center;">Join <span id="sig_number" style="text-align: center;" class ="not_letter">Some</span> Californians</p>
   
     </div>
@@ -227,8 +227,14 @@ border-color: white;">SIGN THE LETTER</button>
 
     <div class="row" style="padding-top:500px">
     <div class="col-md-12">
-    <img property="og:image" src="img/img/Eagle_icon.png">
-
+    <!--<div class="row">-->
+    <!--<div class="col-xs-12" >-->
+    <div class="text-center">
+    <img property="og:image" src="img/Eagle_icon.png" style="width:150px">
+    <p class="not_letter text-center" style="color:red;"> THE LETTER</p>
+    </div>
+    <!--</div>-->
+    <!--</div>-->
       <div class="padding"></div>
       <strong>Dear Senator Dianne Feinstein,</strong>
       <div class="padding"></div>
