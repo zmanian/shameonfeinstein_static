@@ -41,8 +41,8 @@ img {
 }
 
 .subtitle {
-  font-family: 'Gothic Ultra';
-  font-size: 30px;
+  font-family: 'Helvetica Neue',sans-serif;
+  font-size: 25px;
   text-align: center;
   margin-top: 0px;
 }
@@ -115,10 +115,15 @@ img {
 }
 
 .divider {
-  width: 100%;
-  border-top: 2px solid #222;
+  width: 10%;
+  border-top: 10px solid #222;
+  margin-left:auto;
+  margin-right:auto;
 }
 
+.padding{
+  height:30px;
+}
 
 .well {
   padding-top: 0px;
