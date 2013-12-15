@@ -56,16 +56,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Credis</h4>
+        <h4 class="modal-title">credits</h4>
       </div>
       <div class="modal-body">
         <p>Several programmers donated their time to this project, including:</p>
-        <p>Zaki Manian <a href="https://github/zmanian">GitHub</a></p>
-        <p>Paul Sawaya <a href="http://www.paulsawaya.com/" >http://www.paulsawaya.com/</a>
-        <p>John Shutt <a href="http://shutt.in"> http://shutt.in/</a></p>
-        <p>Jehan Tremback <a href="http://jehantremback.com">http://jehantremback.com/</a></p>
-        <p>Jamie Brim <a href="http://https://angel.co/jwb">http://https://angel.co/jwb</a></p>  
-        <p>Allison Filice <a mailto="allison.filice@gmail.com">Email</a></p>
+        <p><a href="https://github/zmanian">Zaki Manian</a></p>
+        <p><a href="http://www.paulsawaya.com/" >Paul Sawaya</a>
+        <p><a href="http://shutt.in"> John Shutt </a></p>
+        <p><a href="http://jehantremback.com">Jehan Tremback</a></p>
+        <p>Jamie</p>  
+        <p><a mailto="allison.filice@gmail.com">Allison Filice</a> (Design)</p>
+        <p>Thank you to <a href="https://noisebridge.net/">Noisebridge</a> for giving us a space to work.</p>
+
       </div>
       <div class="modal-footer">
       </div>
@@ -78,16 +80,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Is this safe?</h4>
+        <h4 class="modal-title">is this safe?</h4>
       </div>
       <div class="modal-body">
         <p>On the one hand, people want to express their political views in a powerful way, but on the other hand, they may put themselves at risk of surveillance by doing so. At the very least, we think you should be able to anonymously stand up and be counted. Therefore:</p>
         <ul>
           <li>We created three tiers of participation: 1) anonymous signatures associated with a zip code, 2) names associated with zip codes, but not visible on the web, 3) names associated with zip codes that are visible on the web.</li>
-          <li>When you submit information via the form, it is transmitted securely to our server (encrypted end to end). The database of names and zip codes is two-factor authenticated and only accessible by private key.</li>
+          <li>When you submit information via the form, it is transmitted securely to our server (encrypted end to end).</li>
           <li> We are not storing any email addresses. We use the email address to send a verification email, and give your email address a unique identifier. This cannot be decoded to discover your email address, but can be used to make sure there is only one signature per person.</li>
+          <li>The social media buttons do not send information to Facebook or Twitter until you "turn them on" by clicking on them. 
+</li>
         </ul>
-        <p>These security measures are the bare minimum. They do not protect against many potential privacy invasions, including your browser, keyloggers on your computer, Linode's (server) own security and willingness to fight national security letters, the security issues tied to your email account, among others. We can't guarantee your info is safe, but we did our best.</p>
+        <p>These security measures do not protect against privacy invasions via your own computer or from the inevitable vulnerabilities of servers.</p>
       </div>
       <div class="modal-footer">
       </div>
@@ -172,8 +176,8 @@ border-color: white;">Sign the letter</button>
             <br/>
               <div class="share"></div>
 
-        <a href="#safe" onclick="$('#credits').modal();" >Credits</a>   |   
-        <a href="#credits" onclick="$('#safe').modal();" >Is this safe?</a>
+        <a href="#safe" onclick="$('#safe').modal();" >is this safe</a>
+     |   <a href="#credits" onclick="$('#credits').modal();" >credits</a>
             </div>
             
         </p>
