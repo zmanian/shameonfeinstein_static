@@ -117,7 +117,7 @@ window.petition.validZip = function(){
   }
   else{
     $('#zip_group').addClass("has-error");
-    $('#zip_help_block').empty().append("Please sign this petition instead. <a href='http://www.freepress.net/NSA-spying'>Free Press:Don't Spy on Me </a>");
+    $('#zip_help_block').empty().append("Please sign this petition instead. <a href='http://act.freepress.net/sign/Internet_FISA_Feinstein/'>Free Press:Don't Spy on Me </a>");
 
   }
 }
