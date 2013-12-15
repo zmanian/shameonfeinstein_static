@@ -46,6 +46,16 @@ img {
   margin-bottom: 10px;
 }
 
+.newblue:hover{
+  background:#00aeef;
+  border-color:#00aeef;
+}
+
+.newblue{
+  color:#00aeef;
+  border-color:#00aeef;
+}
+
 .not_letter {  
   font-family: 'Montserrat', sans-serif;
   font-weight:700;
@@ -90,7 +100,7 @@ img {
 }
 .petition_button{
   background: none;
-  color: #357ebd;
+  color: #00aeef;
 }
 
 .cta a:link {color:white;}      /* unvisited link */
