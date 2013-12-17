@@ -4,6 +4,51 @@
   src: url('../fonts/gothic_ultra_ot.otf');
 }
 
+ol ul:before {
+    content: counter(mylist);
+    
+}
+
+ol {
+  margin-left:0;
+  padding-left:0; 
+  counter-reset:item;
+  }
+ol>li {
+  margin-left:0px;
+  padding:30px;
+  counter-increment:item;
+  list-style:none inside;
+  margin-bottom:10px;
+  background-color:#feecec;
+  
+  text-indent: 0em;
+  }
+  
+li>span{
+  position:relative;
+  left:40px;
+  
+
+}
+ol>li:before {
+  float:left;
+  clear:both;
+  overflow:hidden;
+  content: counter(item) ;
+  padding:1px 5px;
+  margin-right:.5em;
+  margin-bottom:5em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 20px; 
+  border: 2px solid black;
+  /*left: -30px;*/
+
+  
+}
+
+
 
 body {
 
