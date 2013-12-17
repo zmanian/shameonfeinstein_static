@@ -28,9 +28,8 @@ ol>li {
 li>span{
   position:relative;
   left:40px;
-  
-
 }
+
 ol>li:before {
   float:left;
   clear:both;
@@ -43,12 +42,7 @@ ol>li:before {
   -moz-border-radius: 10px;
   border-radius: 20px; 
   border: 2px solid black;
-  /*left: -30px;*/
-
-  
 }
-
-
 
 body {
 
