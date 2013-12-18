@@ -44,3 +44,8 @@ svg {
 .redacted::-moz-selection {
     background:#e6ff3f;
 }
+
+.sigcontainer{
+  padding:10px;
+  background-color: #d1d0d0;
+}
