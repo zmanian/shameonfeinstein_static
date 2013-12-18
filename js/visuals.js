@@ -60,7 +60,7 @@ window.viz.displayData = function(){
 
 
 window.viz.displaySignature = function(sigdata){
-  if (viz.isObfuscated(sigdata)){
+  if (viz.isObfuscatedSig(sigdata)){
     var obfuscationString = "REDACTED"
     while (obfuscationString.length <= sigdata.firstLen || obfuscationString <= sigdata.lastLen ){obfuscationString +=obfuscationString;}
     var sigcontainer = $('<div>',{id:"sigcontainer",class:"sigcontainer"});
