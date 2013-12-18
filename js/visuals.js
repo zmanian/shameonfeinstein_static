@@ -95,7 +95,7 @@ window.viz.orderSignatures = function(){
 }
 
 $( document ).ready( function(){
-  $.when(viz.getSignatures(),viz.getSingaturesRedacted()).done(viz.displayData());
+  $.when(viz.getSignatures(),viz.getSingaturesRedacted()).done(function(x){viz.displayData();});
   // viz.orderSignatures();
   // $('.alert').hide();
 } );
