@@ -83,7 +83,7 @@ window.viz.displaySignature = function(sigdata){
 
 
 window.viz.displayableSig = function(sig_item){
-  if((sig_item.firstLen > 0 || sig_item.lastLen > 0 || sig_item.first !== "" || sig_item.first !== "") && isValidCAZip(sig_item.zipcode)){return true;}
+  if((sig_item.firstLen > 0 || sig_item.lastLen > 0 || sig_item.first !== "" || sig_item.first !== "") && isValidCAZip(sig_item.zip_code)){return true;}
   return false;
 }
 
