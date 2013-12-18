@@ -133,33 +133,34 @@ window.petition.submitSingature = function(){
   else{
     $("#redactedHidden").prop('disabled', false);
   }
-  if (!isRFC822ValidEmail($('#email').val()) && !isValidCAZip($('#zip').val())){
+  if (isRFC822ValidEmail($('#email').val()) && isValidCAZip($('#zip').val())){
+    $('#signup').modal('hide');
+    console.log($('#signatureForm').serialize());
+    $.ajax({
+      url:"/sign",
+      type:"post",
+      data:$('#signatureForm').serialize(),
+      statusCode:{
+        200:function(){
+          $('#checkoyouremail').show();
+        },
+        401:function(){
+          $('#alreadysigned').show();
+        },
+        420:function(){
+          $('#toomanysignatures').show();
+        },
+        500:function(){
+          $('#somethingwentwrong').show();
+        }
+      }
+    }
+    ).fail(function(){$('#somethingwentwrong').show(); $('#cta').show()}) ;
+  }
+  else{
     alert("Please correct the errors in your form");
     return;
   }
-  $('#signup').modal('hide');
-  console.log($('#signatureForm').serialize());
-  $.ajax({
-    url:"/sign",
-    type:"post",
-    data:$('#signatureForm').serialize(),
-    statusCode:{
-      200:function(){
-        $('#checkoyouremail').show();
-      },
-      401:function(){
-        $('#alreadysigned').show();
-      },
-      420:function(){
-        $('#toomanysignatures').show();
-      },
-      500:function(){
-        $('#somethingwentwrong').show();
-      }
-    }
-  }
-  ).fail(function(){$('#somethingwentwrong').show(); $('#cta').show()}) ;
-
 
 }
 
