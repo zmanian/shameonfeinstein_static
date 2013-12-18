@@ -82,18 +82,32 @@ window.viz.displaySignature = function(sigdata){
 };
 
 
+window.viz.displayableSig = function(sig_item){
+  if(sig_item.firstLen > 0 || sig_item.lastLen > 0 || sig_item.first !== "" || sig_item.first !== ""){return true;}
+  return false;
+}
 
 
 window.viz.orderSignatures = function(){
     var column = $('<div>',{id:"subcol",class:"col-md-2"});
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
-    for (var i = 1;i < 19;i++){
-    
-      viz.displaySignature(sig_data_sorted.pop());
-      if(i%3 ===0 && i > 2){
+    var i = 1;
+    while (i < 19){
+      
+      var data_item =sig_data_sorted.pop();
+      
+      if (viz.displayableSig(data_item)) {
+        viz.displaySignature();
+        i++;
+      
+        if(i%3 ===0 && i > 2){
         $("#signhead >.sigcontainer").wrapAll(column)
-      }
+        }
+      
+      } 
+      
+      
     }
          $("#signhead >.sigcontainer").wrapAll(column)
 }
