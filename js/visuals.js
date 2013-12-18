@@ -85,7 +85,7 @@ window.viz.orderSignatures = function(){
     var column = $('<div>',{id:"subcol",class:"col-md-2"});
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
-    for (var i = 0;i < 48;i++){
+    for (var i = 0;i < 24;i++){
       viz.displaySignature(sig_data_sorted.pop());
       if(i%4 ===0 && i > 3){
         $("#signhead >.sigcontainer").wrapAll(column)
