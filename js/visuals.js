@@ -98,7 +98,7 @@ window.viz.orderSignatures = function(){
       var data_item =sig_data_sorted.pop();
       
       if (viz.displayableSig(data_item)) {
-        viz.displaySignature();
+        viz.displaySignature(data_item);
         i++;
       
         if(i%3 ===0 && i > 2){
