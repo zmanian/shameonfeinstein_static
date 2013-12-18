@@ -91,7 +91,7 @@ window.viz.orderSignatures = function(){
     for (var i = 0;i < 24;i++){
     
       viz.displaySignature(sig_data_sorted.pop());
-      if(i%3 ===0 && i > 3){
+      if(i%3 ===0 && i > 2){
         $("#signhead >.sigcontainer").wrapAll(column)
       }
     }
