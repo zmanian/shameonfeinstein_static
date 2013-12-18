@@ -1,4 +1,6 @@
 
+
+
 @font-face {
   font-family: 'Gothic Ultra';
   src: url('../fonts/gothic_ultra_ot.otf');
@@ -254,3 +256,9 @@ img {
   margin-top: 30px;
   color: #6F6F6F;
 }
+
+.sigcontainer{
+  padding:10px;
+  background-color: #d1d0d0;
+}
+
