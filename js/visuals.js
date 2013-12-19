@@ -10,9 +10,9 @@ window.viz.getSignatures = function(){
     dataType:'json',
   }).success(function(data){
     console.log(data);
+    //We had some data contaimination with non-CA zips durng the first ~500 singatures filter them out
     window.viz.signature_count = data.filter(function(x){return isValidCAZip(x.zip_code);}).length;
-    window.viz.signature_data = data;
-    // viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
+    window.viz.signature_data = data.filter(function(x){return isValidCAZip(x.zip_code);});
   });
 }
 
@@ -22,9 +22,9 @@ window.viz.getSingaturesRedacted = function(){
     dataType:'json',
   }).success(function(data){
     console.log(data);
+    //We had some data contaimination with non-CA zips durng the first ~500 singatures filter them out
     window.viz.signature_count_redacted = data.filter(function(x){return isValidCAZip(x.zip_code);}).length;
-    window.viz.signature_redacted_data = data;
-    // viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
+    window.viz.signature_redacted_data = data.filter(function(x){return isValidCAZip(x.zip_code);});
   });
 
 }
@@ -46,7 +46,7 @@ window.viz.isObfuscatedSig = function(sigdata){
 
 viz.sigDateCompare = function (a,b){
 
-  if (Date.parse(a.date.split(".")[0]) < Date.parse(b.date.split(".")[0])){ return -1;}
+  if (Date.parse(a.date.split(".")[0]) < Date.parse(b.date.split(".")[0])){ return -1;} //Truncate the string after so that it can be parsed in both Chrome, FF and legacy browsers
   if (Date.parse(a.date.split(".")[0]) > Date.parse(b.date.split(".")[0])){ return 1;}
   return 0;
 }
