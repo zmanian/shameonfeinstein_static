@@ -48,4 +48,6 @@ svg {
 .sigcontainer{
   padding:10px;
   background-color: #d1d0d0;
+  line-height: 2em;
+  border: 1px solid #feecec;
 }
