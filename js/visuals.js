@@ -46,8 +46,8 @@ window.viz.isObfuscatedSig = function(sigdata){
 
 viz.sigDateCompare = function (a,b){
 
-  if (Date.parse(a.date) < Date.parse(b.date)){ return -1;}
-  if (Date.parse(a.date) > Date.parse(b.date)){ return 1;}
+  if (Date.parse(a.date.split(".")[0]) < Date.parse(b.date.split(".")[0])){ return -1;}
+  if (Date.parse(a.date.split(".")[0]) > Date.parse(b.date.split(".")[0])){ return 1;}
   return 0;
 }
 
