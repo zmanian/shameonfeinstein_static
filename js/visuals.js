@@ -89,7 +89,7 @@ window.viz.displayableSig = function(sig_item){
 
 
 window.viz.orderSignatures = function(){
-    var column = $('<div>',{id:"subcol",class:"col-md-2"});
+    var column = $('<div>',{id:"subcol",class:"col-sm-2"});
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
     var i = 0;
