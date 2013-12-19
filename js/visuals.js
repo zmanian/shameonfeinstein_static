@@ -93,7 +93,7 @@ window.viz.orderSignatures = function(){
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
     var i = 0;
-    while (i < 18){
+    while (i < 54){
       
       var data_item =sig_data_sorted.pop();
       
