@@ -10,7 +10,7 @@ window.viz.getSignatures = function(){
     dataType:'json',
   }).success(function(data){
     console.log(data);
-    window.viz.signature_count = data.length;
+    window.viz.signature_count = data.filter(function(x){return isValidCAZip(x.zip_code);}).length;
     window.viz.signature_data = data;
     // viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
   });
@@ -22,7 +22,7 @@ window.viz.getSingaturesRedacted = function(){
     dataType:'json',
   }).success(function(data){
     console.log(data);
-    window.viz.signature_count_redacted = data.length;
+    window.viz.signature_count_redacted = data.filter(function(x){return isValidCAZip(x.zip_code);}).length;
     window.viz.signature_redacted_data = data;
     // viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
   });
