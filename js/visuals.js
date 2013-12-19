@@ -10,9 +10,9 @@ window.viz.getSignatures = function(){
     dataType:'json',
   }).success(function(data){
     console.log(data);
-    window.viz.signature_count = data.length;
-    window.viz.signature_data = data;
-    // viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
+    //We had some data contaimination with non-CA zips durng the first ~500 singatures filter them out
+    window.viz.signature_count = data.filter(function(x){return isValidCAZip(x.zip_code);}).length;
+    window.viz.signature_data = data.filter(function(x){return isValidCAZip(x.zip_code);});
   });
 }
 
@@ -22,9 +22,9 @@ window.viz.getSingaturesRedacted = function(){
     dataType:'json',
   }).success(function(data){
     console.log(data);
-    window.viz.signature_count_redacted = data.length;
-    window.viz.signature_redacted_data = data;
-    // viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
+    //We had some data contaimination with non-CA zips durng the first ~500 singatures filter them out
+    window.viz.signature_count_redacted = data.filter(function(x){return isValidCAZip(x.zip_code);}).length;
+    window.viz.signature_redacted_data = data.filter(function(x){return isValidCAZip(x.zip_code);});
   });
 
 }
@@ -46,8 +46,8 @@ window.viz.isObfuscatedSig = function(sigdata){
 
 viz.sigDateCompare = function (a,b){
 
-  if (Date.parse(a.date) < Date.parse(b.date)){ return -1;}
-  if (Date.parse(a.date) > Date.parse(b.date)){ return 1;}
+  if (Date.parse(a.date.split(".")[0]) < Date.parse(b.date.split(".")[0])){ return -1;} //Truncate the string after so that it can be parsed in both Chrome, FF and legacy browsers
+  if (Date.parse(a.date.split(".")[0]) > Date.parse(b.date.split(".")[0])){ return 1;}
   return 0;
 }
 
@@ -89,11 +89,11 @@ window.viz.displayableSig = function(sig_item){
 
 
 window.viz.orderSignatures = function(){
-    var column = $('<div>',{id:"subcol",class:"col-md-2"});
+    var column = $('<div>',{id:"subcol",class:"col-sm-2"});
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
     var i = 0;
-    while (i < 18){
+    while (i < 54){
       
       var data_item =sig_data_sorted.pop();
       
