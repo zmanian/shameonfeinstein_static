@@ -211,6 +211,11 @@ img {
   height:30px;
 }
 
+.inner-well{
+  margin-left:19%;
+  margin-right:19%;
+}
+
 .well {
   position:absolute;
   left:0;
