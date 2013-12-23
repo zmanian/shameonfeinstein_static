@@ -76,6 +76,8 @@ window.viz.displaySignature = function(sigdata){
     var firstname = $('<div>',{id:"firstname",class:""}).text(sigdata.first);
     var lastname = $('<div>',{id:"lastname",class:""}).text(sigdata.last);
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
+    if (sigdata.first === ""){ firstname = $('<br/>');}
+    if (sigdata.last === ""){ lastname = $('<br/>');}
     var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip);
     return $('#signhead').append(sigcontents).fadeIn("slow");
   }
