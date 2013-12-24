@@ -54,7 +54,7 @@ viz.sigDateCompare = function (a,b){
 
 window.viz.displayData = function(){
       viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
-      setTimeout(function(){viz.orderSignatures();},1000);
+      setTimeout(function(){viz.orderSignatures();},5000);
 }
 
 
