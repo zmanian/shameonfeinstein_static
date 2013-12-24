@@ -31,8 +31,8 @@ window.viz.getSingaturesRedacted = function(){
 
 
 window.viz.updateSignatureCount = function(total_count){
-  $('#sig_number').text(total_count).fadeIn("slow"); 
-  $('#sig_number_2').text(total_count).fadeIn("slow"); 
+  setTimeout(function(){$('#sig_number').text(total_count).fadeIn("slow");},100); 
+  setTimeout(function(){$('#sig_number_2').text(total_count).fadeIn("slow");},100); 
 };
 
 window.viz.isObfuscatedSig = function(sigdata){
