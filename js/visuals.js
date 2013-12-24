@@ -95,20 +95,20 @@ window.viz.orderSignatures = function(){
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
     var i = 0;
-    while (i < 54){
+    // while (i < 54){
       
-      var data_item =sig_data_sorted.pop();
+    //   var data_item =sig_data_sorted.pop();
       
-      if (viz.displayableSig(data_item)) {
-        viz.displaySignature(data_item);
-        i++;
+    //   if (viz.displayableSig(data_item)) {
+    //     viz.displaySignature(data_item);
+    //     i++;
       
-        if(i%3 ===0 && i > 2){
-        $("#signhead >.sigcontainer").wrapAll(column)
-        }
-      } 
-    }
-         $("#signhead >.sigcontainer").wrapAll(column)
+    //     if(i%3 ===0 && i > 2){
+    //     $("#signhead >.sigcontainer").wrapAll(column)
+    //     }
+    //   } 
+    // }
+    //     $("#signhead >.sigcontainer").wrapAll(column)
 }
 
 $( document ).ready( function(){
