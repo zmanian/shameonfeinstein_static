@@ -51,5 +51,6 @@ svg {
   line-height: 2em;
   border: 1px solid #feecec;
   font-size: 10px;
+  white-space:nowrap;
 }
 
