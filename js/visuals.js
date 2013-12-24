@@ -68,8 +68,8 @@ window.viz.displaySignature = function(sigdata){
     var br = $('<br>',{id:"break",class:""});
     var lastname = $('<div>',{id:"lastname",class:"redacted"}).text(obfuscationString.substring(0,sigdata.lastLen));
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
-    var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip).promise();
-    return $('#signhead').append(sigcontents).fadeIn("slow");
+    var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip);
+    return setTimeout(function (){$('#signhead').append(sigcontents).fadeIn("slow");},200)
   }
   else {
     var sigcontainer = $('<div>',{id:"sigcontainer",class:"sigcontainer"});
@@ -78,8 +78,8 @@ window.viz.displaySignature = function(sigdata){
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
     if (sigdata.first === ""){ firstname = $('<br/>');}
     if (sigdata.last === ""){ lastname = $('<br/>');}
-    var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip).promise();
-    return $('#signhead').append(sigcontents).fadeIn("slow");
+    var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip);
+    return setTimeout(function (){$('#signhead').append(sigcontents).fadeIn("slow");},200)
   }
 };
 
@@ -104,11 +104,11 @@ window.viz.orderSignatures = function(){
         i++;
       
         if(i%3 ===0 && i > 2){
-        $("#signhead >.sigcontainer").wrapAll(column).promise()
+        setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column);},200);
         }
       } 
     }
-         $("#signhead >.sigcontainer").wrapAll(column).promise()
+        setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column).promise();},200);
 }
 
 $( document ).ready( function(){
