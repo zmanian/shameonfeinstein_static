@@ -68,7 +68,7 @@ window.viz.displaySignature = function(sigdata){
     var br = $('<br>',{id:"break",class:""});
     var lastname = $('<div>',{id:"lastname",class:"redacted"}).text(obfuscationString.substring(0,sigdata.lastLen));
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
-    var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip);
+    var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip).promise();
     return $('#signhead').append(sigcontents).fadeIn("slow");
   }
   else {
@@ -78,7 +78,7 @@ window.viz.displaySignature = function(sigdata){
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
     if (sigdata.first === ""){ firstname = $('<br/>');}
     if (sigdata.last === ""){ lastname = $('<br/>');}
-    var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip);
+    var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip).promise();
     return $('#signhead').append(sigcontents).fadeIn("slow");
   }
 };
@@ -95,20 +95,20 @@ window.viz.orderSignatures = function(){
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
     var i = 0;
-    // while (i < 54){
+    while (i < 54){
       
-    //   var data_item =sig_data_sorted.pop();
+      var data_item =sig_data_sorted.pop();
       
-    //   if (viz.displayableSig(data_item)) {
-    //     viz.displaySignature(data_item);
-    //     i++;
+      if (viz.displayableSig(data_item)) {
+        viz.displaySignature(data_item);
+        i++;
       
-    //     if(i%3 ===0 && i > 2){
-    //     $("#signhead >.sigcontainer").wrapAll(column)
-    //     }
-    //   } 
-    // }
-    //     $("#signhead >.sigcontainer").wrapAll(column)
+        if(i%3 ===0 && i > 2){
+        $("#signhead >.sigcontainer").wrapAll(column).promise()
+        }
+      } 
+    }
+         $("#signhead >.sigcontainer").wrapAll(column).promise()
 }
 
 $( document ).ready( function(){
