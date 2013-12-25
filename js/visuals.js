@@ -69,7 +69,7 @@ window.viz.displaySignature = function(sigdata,timedelay){
     var lastname = $('<div>',{id:"lastname",class:"redacted"}).text(obfuscationString.substring(0,sigdata.lastLen));
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
     var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip);
-    return setTimeout(function (){$('#signhead').append(sigcontents).fadeIn("slow");},50*timedelay)
+    return setTimeout(function (){$('#signhead > #subcol').append(sigcontents).fadeIn("slow");},50*timedelay)
   }
   else {
     var sigcontainer = $('<div>',{id:"sigcontainer",class:"sigcontainer"});
@@ -79,7 +79,7 @@ window.viz.displaySignature = function(sigdata,timedelay){
     if (sigdata.first === ""){ firstname = $('<br/>');}
     if (sigdata.last === ""){ lastname = $('<br/>');}
     var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip);
-    return setTimeout(function (){$('#signhead').append(sigcontents).fadeIn("slow");},50*timedelay)
+    return setTimeout(function (){$('#signhead > #subcol').append(sigcontents).fadeIn("slow");},50*timedelay)
   }
 };
 
@@ -96,19 +96,21 @@ window.viz.orderSignatures = function(){
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
     var i = 0;
     while (i < 54){
-      
+      if(i%3 === 0){
+      setTimeout(function(){$("#signhead").append(column)},50*(i+1));
+      }
       var data_item =sig_data_sorted.pop();
       
       if (viz.displayableSig(data_item)) {
         viz.displaySignature(data_item,i+1);
         i++;
       
-        if(i%3 ===0 && i > 2){
-        setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column);},50*(i+1));
-        }
+        // if(i%3 ===0 && i > 2){
+        // setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column);},50*(i+1));
+        // }
       } 
     }
-        setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column).promise();},50*(i+1));
+        // setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column).promise();},50*(i+1));
 }
 
 $( document ).ready( function(){
