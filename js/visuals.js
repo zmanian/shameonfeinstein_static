@@ -103,7 +103,7 @@ window.viz.orderSignatures = function(){
        col_id +=1;
         var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
         // setTimeout(function(){$("#signhead").append(column)},100*(i+1));
-      $("#signhead").append(column);
+      // $("#signhead").append(column);
       }
       viz.displaySignature(data_item,col_id,i+1);
       i++;
