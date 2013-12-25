@@ -54,7 +54,7 @@ viz.sigDateCompare = function (a,b){
 
 window.viz.displayData = function(){
       viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
-      setTimeout(function(){viz.orderSignatures();},200);
+      setTimeout(function(){viz.orderSignatures();},1000);
 }
 
 
@@ -102,8 +102,8 @@ window.viz.orderSignatures = function(){
       if(i%3 === 0){
        col_id +=1;
         var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
-        setTimeout(function(){$("#signhead").append(column)},100*(i+1));
-      // $("#signhead").append(column);
+        // setTimeout(function(){$("#signhead").append(column)},100*(i+1));
+      $("#signhead").append(column);
       }
       viz.displaySignature(data_item,col_id,i+1);
       i++;
