@@ -59,7 +59,7 @@ window.viz.displayData = function(){
 
 
 
-window.viz.displaySignature = function(sigdata){
+window.viz.displaySignature = function(sigdata,timedelay){
   if (viz.isObfuscatedSig(sigdata)){
     var obfuscationString = "REDACTED"
     while (obfuscationString.length <= sigdata.firstLen || obfuscationString <= sigdata.lastLen ){obfuscationString +=obfuscationString;}
@@ -69,7 +69,7 @@ window.viz.displaySignature = function(sigdata){
     var lastname = $('<div>',{id:"lastname",class:"redacted"}).text(obfuscationString.substring(0,sigdata.lastLen));
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
     var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip);
-    return setTimeout(function (){$('#signhead').append(sigcontents).fadeIn("slow");},200)
+    return setTimeout(function (){$('#signhead').append(sigcontents).fadeIn("slow");},200*timedelay)
   }
   else {
     var sigcontainer = $('<div>',{id:"sigcontainer",class:"sigcontainer"});
@@ -79,7 +79,7 @@ window.viz.displaySignature = function(sigdata){
     if (sigdata.first === ""){ firstname = $('<br/>');}
     if (sigdata.last === ""){ lastname = $('<br/>');}
     var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip);
-    return setTimeout(function (){$('#signhead').append(sigcontents).fadeIn("slow");},200)
+    return setTimeout(function (){$('#signhead').append(sigcontents).fadeIn("slow");},200*timedelay)
   }
 };
 
@@ -100,15 +100,15 @@ window.viz.orderSignatures = function(){
       var data_item =sig_data_sorted.pop();
       
       if (viz.displayableSig(data_item)) {
-        viz.displaySignature(data_item);
+        viz.displaySignature(data_item,i+1);
         i++;
       
         if(i%3 ===0 && i > 2){
-        setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column);},200);
+        setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column);},200*(i+1));
         }
       } 
     }
-        setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column).promise();},200);
+        setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column).promise();},200*(i+1));
 }
 
 $( document ).ready( function(){
