@@ -69,7 +69,7 @@ window.viz.displaySignature = function(sigdata,timedelay){
     var lastname = $('<div>',{id:"lastname",class:"redacted"}).text(obfuscationString.substring(0,sigdata.lastLen));
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
     var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip);
-    return setTimeout(function (){$('#signhead > #subcol'+str(timedelay)).append(sigcontents).fadeIn("slow");},50*timedelay)
+    return setTimeout(function (){$('#signhead > #subcol'+(timedelay).toString()).append(sigcontents).fadeIn("slow");},50*timedelay)
   }
   else {
     var sigcontainer = $('<div>',{id:"sigcontainer",class:"sigcontainer"});
@@ -79,7 +79,7 @@ window.viz.displaySignature = function(sigdata,timedelay){
     if (sigdata.first === ""){ firstname = $('<br/>');}
     if (sigdata.last === ""){ lastname = $('<br/>');}
     var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip);
-    return setTimeout(function (){$('#signhead > #subcol'+str(timedelay)).append(sigcontents).fadeIn("slow");},50*timedelay)
+    return setTimeout(function (){$('#signhead > #subcol'+(timedelay).toString() ).append(sigcontents).fadeIn("slow");},50*timedelay)
   }
 };
 
@@ -96,7 +96,7 @@ window.viz.orderSignatures = function(){
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
     var i = 0;
     while (i < 54){
-      var column = $('<div>',{id:"subcol" + str(i+1),class:"col-sm-2"});
+      var column = $('<div>',{id:"subcol" +(i+1).toString(),class:"col-sm-2"});
       if(i%3 === 0){
       setTimeout(function(){$("#signhead").append(column)},50*(i+1));
       }
