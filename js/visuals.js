@@ -100,7 +100,8 @@ window.viz.orderSignatures = function(){
       if(i%3 === 0){
        col_id +=1;
         var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
-       setTimeout(function(){$("#signhead").append(column)},50*(i+1));
+      // setTimeout(function(){$("#signhead").append(column)},50*(i+1));
+      $("#signhead").append(column);
       }
       
       var data_item =sig_data_sorted.pop();
