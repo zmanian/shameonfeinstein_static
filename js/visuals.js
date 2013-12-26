@@ -95,33 +95,6 @@ window.viz.displayableSig = function(sig_item){
   return false;
 }
 
-
-window.viz.orderSignatures = function(){
-    // var column = $('<div>',{id:"subcol",class:"col-sm-2"});
-    var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
-    var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
-    var i = 0;
-    var col_id=0;
-    while (i < sig_data.length()){
-      var data_item =sig_data_sorted.pop();
-      if (viz.displayableSig(data_item)){
-      if(i%3 === 0){
-       col_id +=1;
-        var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
-        setTimeout(function(){$("#signhead").append(column)},100*(i+1));
-      // $("#signhead").append(column);
-      }
-      viz.displaySignature(data_item,col_id,i+1);
-      i++;
-      
-        // if(i%3 ===0 && i > 2){
-        // setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column);},50*(i+1));
-        // }
-      } 
-    }
-        // setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column).promise();},50*(i+1));
-}
-
 window.viz.orderSignatures = function(){
     // var column = $('<div>',{id:"subcol",class:"col-sm-2"});
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
@@ -133,8 +106,8 @@ window.viz.orderSignatures = function(){
       if (viz.displayableSig(data_item)){
       if(i%3 === 0){
        col_id +=1;
-        // var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
-        // setTimeout(function(){$("#signhead").append(column)},100*(i+1));
+        var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
+        setTimeout(function(){$("#signhead").append(column)},100*(i+1));
       // $("#signhead").append(column);
       }
       viz.displaySignature(data_item,col_id,i+1);
@@ -159,8 +132,8 @@ window.viz.orderSignaturesWithWorker = function(){
           if (viz.displayableSig(data_item)){
           if(i%3 === 0){
           col_id +=1;
-        // var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
-        // setTimeout(function(){$("#signhead").append(column)},100*(i+1));
+        var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
+        setTimeout(function(){$("#signhead").append(column)},100*(i+1));
       // $("#signhead").append(column);
           }
         viz.displaySignature(data_item,col_id,i+1);
