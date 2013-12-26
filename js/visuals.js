@@ -74,8 +74,8 @@ window.viz.displaySignature = function(sigdata,col_id,timedelay){
     var br = $('<br>',{id:"break",class:""});
     var lastname = $('<div>',{id:"lastname",class:"redacted"}).text(obfuscationString.substring(0,sigdata.lastLen));
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
-    var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip).show().fadeIn("slow");
-    return setTimeout(function (){$('#subcol'+(col_id).toString()).append(sigcontents);},500*timedelay)
+    var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip);
+    return setTimeout(function (){$('#subcol'+(col_id).toString()).append(sigcontents).child().show("slow").fadeIn("slow");},500*timedelay)
   }
   else {
     var sigcontainer = $('<div>',{id:"sigcontainer",class:"sigcontainer"});
@@ -84,8 +84,8 @@ window.viz.displaySignature = function(sigdata,col_id,timedelay){
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
     if (sigdata.first === ""){ firstname = $('<br/>');}
     if (sigdata.last === ""){ lastname = $('<br/>');}
-    var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip).show().fadeIn("slow");
-    return setTimeout(function (){$('#subcol'+(col_id).toString() ).append(sigcontents);},500*timedelay)
+    var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip);
+    return setTimeout(function (){$('#subcol'+(col_id).toString() ).append(sigcontents).child().show("slow").fadeIn("slow");;},500*timedelay)
   }
 };
 
