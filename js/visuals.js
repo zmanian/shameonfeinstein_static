@@ -69,7 +69,7 @@ window.viz.displaySignature = function(sigdata,col_id,timedelay){
     var lastname = $('<div>',{id:"lastname",class:"redacted"}).text(obfuscationString.substring(0,sigdata.lastLen));
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
     var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip);
-    return setTimeout(function (){$('#subcol'+(col_id).toString()).append(sigcontents).fadeIn("slow");},150*timedelay)
+    return setTimeout(function (){$('#subcol'+(col_id).toString()).append(sigcontents).fadeIn("slow");},500*timedelay)
   }
   else {
     var sigcontainer = $('<div>',{id:"sigcontainer",class:"sigcontainer"});
@@ -79,7 +79,7 @@ window.viz.displaySignature = function(sigdata,col_id,timedelay){
     if (sigdata.first === ""){ firstname = $('<br/>');}
     if (sigdata.last === ""){ lastname = $('<br/>');}
     var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip);
-    return setTimeout(function (){$('#subcol'+(col_id).toString() ).append(sigcontents).fadeIn("slow");},150*timedelay)
+    return setTimeout(function (){$('#subcol'+(col_id).toString() ).append(sigcontents).fadeIn("slow");},500*timedelay)
   }
 };
 
