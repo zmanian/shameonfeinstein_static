@@ -127,7 +127,7 @@ window.viz.orderSignaturesWithWorker = function(){
       sortWorker.addEventListener('message', function(e) {
         var i = 0;
         var col_id=0;
-        while (i < sig_data_sorted.length()){
+        while (i < e.data.length()){
           var data_item =e.data.pop();
           if (viz.displayableSig(data_item)){
           if(i%3 === 0){
