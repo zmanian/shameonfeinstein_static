@@ -101,14 +101,14 @@ window.viz.orderSignatures = function(){
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
     var i = 0;
     var col_id=0;
-    while (i < 54){
+    while (i < sig_data_sorted.length()){
       var data_item =sig_data_sorted.pop();
       if (viz.displayableSig(data_item)){
       if(i%3 === 0){
        col_id +=1;
         var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
-        setTimeout(function(){$("#signhead").append(column)},100*(i+1));
-      // $("#signhead").append(column);
+        // setTimeout(function(){$("#signhead").append(column)},100*(i+1));
+      $("#signhead").append(column);
       }
       viz.displaySignature(data_item,col_id,i+1);
       i++;
@@ -127,14 +127,14 @@ window.viz.orderSignaturesWithWorker = function(){
       sortWorker.addEventListener('message', function(e) {
         var i = 0;
         var col_id=0;
-        while (i < 54){
+        while (i < sig_data_sorted.length()){
           var data_item =e.data.pop();
           if (viz.displayableSig(data_item)){
           if(i%3 === 0){
           col_id +=1;
         var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
-        setTimeout(function(){$("#signhead").append(column)},100*(i+1));
-      // $("#signhead").append(column);
+        // setTimeout(function(){$("#signhead").append(column)},100*(i+1));
+      $("#signhead").append(column);
           }
         viz.displaySignature(data_item,col_id,i+1);
         i++;
