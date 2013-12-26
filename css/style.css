@@ -1,10 +1,10 @@
 
 
 
-@font-face {
-  font-family: 'Gothic Ultra';
-  src: url('../fonts/gothic_ultra_ot.otf');
-}
+/*@font-face {*/
+/*  font-family: 'Gothic Ultra';*/
+/*  src: url('../fonts/gothic_ultra_ot.otf');*/
+/*}*/
 
 ol ul:before {
     content: counter(mylist);
@@ -99,25 +99,25 @@ img {
 }
 
 .not_letter p h1 h2 h3 h4 h5 h6 {  
-  font-family: 'Montserrat', sans-serif;
+  /*font-family: 'Montserrat', sans-serif;*/
   font-weight:700;
   
 }
 
 *{  
-  font-family: 'Ubuntu','Arial', sans-serif;
+  /*font-family: 'Ubuntu','Arial', sans-serif;*/
   font-weight:400;
   }
 
 
 .letter{
-  font-family: 'Ubuntu','Arial', sans-serif;
+  /*font-family: 'Ubuntu','Arial', sans-serif;*/
   font-weight:400;
 }
 
 
 .subtitle {
-  font-family: 'Montserrat', sans-serif;
+  /*font-family: 'Montserrat', sans-serif;*/
   font-weight:700;
   font-size: 25px;
   text-align: center;
