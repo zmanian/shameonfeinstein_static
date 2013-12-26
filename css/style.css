@@ -59,7 +59,7 @@ body {
 }
 
 h1 {
-  /*font-family: Arial, Helvetica, sans-serif;*/
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-size: 56px;
   font-weight: bold;
@@ -99,25 +99,25 @@ img {
 }
 
 .not_letter p h1 h2 h3 h4 h5 h6 {  
-  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
   font-weight:700;
   
 }
 
 *{  
-  /*font-family: 'Ubuntu','Arial', sans-serif;*/
+  font-family: 'Ubuntu','Arial', sans-serif;
   font-weight:400;
   }
 
 
 .letter{
-  /*font-family: 'Ubuntu','Arial', sans-serif;*/
+  font-family: 'Ubuntu','Arial', sans-serif;
   font-weight:400;
 }
 
 
 .subtitle {
-  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
   font-weight:700;
   font-size: 25px;
   text-align: center;
@@ -151,7 +151,7 @@ img {
 }
 
 .cta a:link {color:white;}      /* unvisited link */
-.cta a:visited {color:white;}}      /* unvisited link */
+.cta a:visited {color:white;}      /* unvisited link */
 
 #signup-notice {
   display: block;
@@ -257,7 +257,7 @@ img {
 }
 
 .sig-counter {
-  /*font-family: 'Arial', sans-serif;*/
+  font-family: 'Arial', sans-serif;
   text-align: right;
   font-size: 20px;
   margin-top: 30px;
