@@ -1,6 +1,6 @@
 self.addEventListener('message', function(e) {
   
-  importScripts('js/date.js');
+  importScripts('date.js');
   
   var sigDateCompare= function (a,b){
 
