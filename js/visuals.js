@@ -167,7 +167,8 @@ window.viz.orderSignaturesWithWorker = function(){
         i++;
           }
         }
-  }, false);
+      }, false);
+      sortWorker.postMessage(sig_data)
 }
 
 
