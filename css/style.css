@@ -1,10 +1,10 @@
 
 
 
-@font-face {
-  font-family: 'Gothic Ultra';
-  src: url('../fonts/gothic_ultra_ot.otf');
-}
+/*@font-face {*/
+/*  font-family: 'Gothic Ultra';*/
+/*  src: url('../fonts/gothic_ultra_ot.otf');*/
+/*}*/
 
 ol ul:before {
     content: counter(mylist);
@@ -59,7 +59,7 @@ body {
 }
 
 h1 {
-  /*font-family: Arial, Helvetica, sans-serif;*/
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-size: 56px;
   font-weight: bold;
@@ -151,7 +151,7 @@ img {
 }
 
 .cta a:link {color:white;}      /* unvisited link */
-.cta a:visited {color:white;}}      /* unvisited link */
+.cta a:visited {color:white;}      /* unvisited link */
 
 #signup-notice {
   display: block;
@@ -257,7 +257,7 @@ img {
 }
 
 .sig-counter {
-  /*font-family: 'Arial', sans-serif;*/
+  font-family: 'Arial', sans-serif;
   text-align: right;
   font-size: 20px;
   margin-top: 30px;

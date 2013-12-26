@@ -54,12 +54,18 @@ viz.sigDateCompare = function (a,b){
 
 window.viz.displayData = function(){
       viz.updateSignatureCount(window.viz.signature_count + window.viz.signature_count_redacted);
-      setTimeout(function(){viz.orderSignatures();},3000);
+      if (window.Worker){
+        setTimeout(function(){viz.orderSignaturesWithWorker();},100);
+      }
+      else{
+        setTimeout(function(){viz.orderSignatures();},100);
+      }
+      
 }
 
 
 
-window.viz.displaySignature = function(sigdata){
+window.viz.displaySignature = function(sigdata,col_id,timedelay){
   if (viz.isObfuscatedSig(sigdata)){
     var obfuscationString = "REDACTED"
     while (obfuscationString.length <= sigdata.firstLen || obfuscationString <= sigdata.lastLen ){obfuscationString +=obfuscationString;}
@@ -69,7 +75,7 @@ window.viz.displaySignature = function(sigdata){
     var lastname = $('<div>',{id:"lastname",class:"redacted"}).text(obfuscationString.substring(0,sigdata.lastLen));
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
     var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip);
-    return $('#signhead').append(sigcontents).fadeIn("slow");
+    return setTimeout(function (){$('#subcol'+(col_id).toString()).append(sigcontents).fadeIn("slow");},500*timedelay)
   }
   else {
     var sigcontainer = $('<div>',{id:"sigcontainer",class:"sigcontainer"});
@@ -79,7 +85,7 @@ window.viz.displaySignature = function(sigdata){
     if (sigdata.first === ""){ firstname = $('<br/>');}
     if (sigdata.last === ""){ lastname = $('<br/>');}
     var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip);
-    return $('#signhead').append(sigcontents).fadeIn("slow");
+    return setTimeout(function (){$('#subcol'+(col_id).toString() ).append(sigcontents).fadeIn("slow");},500*timedelay)
   }
 };
 
@@ -91,25 +97,80 @@ window.viz.displayableSig = function(sig_item){
 
 
 window.viz.orderSignatures = function(){
-    var column = $('<div>',{id:"subcol",class:"col-sm-2"});
+    // var column = $('<div>',{id:"subcol",class:"col-sm-2"});
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
     var i = 0;
+    var col_id=0;
     while (i < 54){
-      
       var data_item =sig_data_sorted.pop();
+      if (viz.displayableSig(data_item)){
+      if(i%3 === 0){
+       col_id +=1;
+        // var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
+        // setTimeout(function(){$("#signhead").append(column)},100*(i+1));
+      // $("#signhead").append(column);
+      }
+      viz.displaySignature(data_item,col_id,i+1);
+      i++;
       
-      if (viz.displayableSig(data_item)) {
-        viz.displaySignature(data_item);
-        i++;
-      
-        if(i%3 ===0 && i > 2){
-        $("#signhead >.sigcontainer").wrapAll(column)
-        }
+        // if(i%3 ===0 && i > 2){
+        // setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column);},50*(i+1));
+        // }
       } 
     }
-         $("#signhead >.sigcontainer").wrapAll(column)
+        // setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column).promise();},50*(i+1));
 }
+
+window.viz.orderSignatures = function(){
+    // var column = $('<div>',{id:"subcol",class:"col-sm-2"});
+    var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
+    var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
+    var i = 0;
+    var col_id=0;
+    while (i < 54){
+      var data_item =sig_data_sorted.pop();
+      if (viz.displayableSig(data_item)){
+      if(i%3 === 0){
+       col_id +=1;
+        // var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
+        // setTimeout(function(){$("#signhead").append(column)},100*(i+1));
+      // $("#signhead").append(column);
+      }
+      viz.displaySignature(data_item,col_id,i+1);
+      i++;
+      
+        // if(i%3 ===0 && i > 2){
+        // setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column);},50*(i+1));
+        // }
+      } 
+    }
+        // setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column).promise();},50*(i+1));
+}
+
+window.viz.orderSignaturesWithWorker = function(){
+      var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
+      var sortWorker = new Worker('js/doSort.js')
+      sortWorker.addEventListener('message', function(e) {
+        var i = 0;
+        var col_id=0;
+        while (i < 54){
+          var data_item =e.data.pop();
+          if (viz.displayableSig(data_item)){
+          if(i%3 === 0){
+          col_id +=1;
+        // var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
+        // setTimeout(function(){$("#signhead").append(column)},100*(i+1));
+      // $("#signhead").append(column);
+          }
+        viz.displaySignature(data_item,col_id,i+1);
+        i++;
+          }
+        }
+      }, false);
+      sortWorker.postMessage(sig_data)
+}
+
 
 $( document ).ready( function(){
   $.when(viz.getSignatures(), viz.getSingaturesRedacted() ).then(function(x){viz.displayData();});
