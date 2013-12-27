@@ -118,7 +118,7 @@ window.viz.orderSignatures = function(){
         // }
       } 
     }
-        setTimeout(function(x){$("#sig_elipse").hide("slow");},50*(i+1));
+        setTimeout(function(x){$("#sig_elipse").hide("slow");},500*(i+1));
 }
 
 window.viz.orderSignaturesWithWorker = function(){
@@ -139,7 +139,7 @@ window.viz.orderSignaturesWithWorker = function(){
         i++;
           }
         }
-        setTimeout(function(x){$("#sig_elipse").hide("slow");},50*(i+1));
+        setTimeout(function(x){$("#sig_elipse").hide("slow");},500*(i+1));
 
       }, false);
       sortWorker.postMessage(sig_data)
