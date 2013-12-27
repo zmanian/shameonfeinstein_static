@@ -98,10 +98,10 @@ window.viz.displayableSig = function(sig_item){
 window.viz.orderSignatures = function(){
     // var column = $('<div>',{id:"subcol",class:"col-sm-2"});
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
-    var sig_data_sorted = sig_data.sort(viz.sigDateCompare)
+    var sig_data_sorted = sig_data.sort(viz.sigDateCompare);
     var i = 0;
     var col_id=0;
-    while (i < sig_data_sorted.length){
+    while (sig_data_sorted.length !== 0){
       var data_item =sig_data_sorted.pop();
       if (viz.displayableSig(data_item)){
       if(i%3 === 0){
@@ -118,7 +118,7 @@ window.viz.orderSignatures = function(){
         // }
       } 
     }
-        // setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column).promise();},50*(i+1));
+        setTimeout(function(x){$("#sig_elipse").hide("slow");},500*(i+1));
 }
 
 window.viz.orderSignaturesWithWorker = function(){
@@ -127,7 +127,7 @@ window.viz.orderSignaturesWithWorker = function(){
       sortWorker.addEventListener('message', function(e) {
         var i = 0;
         var col_id=0;
-        while (i < e.data.length){
+        while (e.data.length !== 0 ){
           var data_item =e.data.pop();
           if (viz.displayableSig(data_item)){
           if(i%3 === 0){
@@ -139,6 +139,8 @@ window.viz.orderSignaturesWithWorker = function(){
         i++;
           }
         }
+        setTimeout(function(x){$("#sig_elipse").hide("slow");},500*(i+1));
+
       }, false);
       sortWorker.postMessage(sig_data)
 }
