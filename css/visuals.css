@@ -46,6 +46,7 @@ svg {
 }
 
 .sigcontainer{
+  display:none;
   padding:10px;
   background-color: #d1d0d0;
   line-height: 2em;
