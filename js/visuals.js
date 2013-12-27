@@ -139,6 +139,8 @@ window.viz.orderSignaturesWithWorker = function(){
         i++;
           }
         }
+        setTimeout(function(x){$("#sig_elipse").hide("slow");},50*(i+1));
+
       }, false);
       sortWorker.postMessage(sig_data)
 }
