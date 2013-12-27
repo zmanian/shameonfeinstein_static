@@ -118,7 +118,7 @@ window.viz.orderSignatures = function(){
         // }
       } 
     }
-        // setTimeout(function(x){$("#signhead >.sigcontainer").wrapAll(column).promise();},50*(i+1));
+        setTimeout(function(x){$("#sig_elipse").hide("slow");},50*(i+1));
 }
 
 window.viz.orderSignaturesWithWorker = function(){
