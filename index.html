@@ -8,6 +8,7 @@
     <link rel='stylesheet' href='css/bootstrap.css' type='text/css'>
     <link rel='stylesheet' href='css/style.css' media='screen, print' type='text/css'>
     <link rel='stylesheet' href='css/visuals.css' type='text/css'>
+    <link rel='stylesheet' href='css/social_buttons.css' type='text/css'>
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
@@ -192,12 +193,25 @@ border-color: white;">SIGN THE LETTER</button>
       <p class="sig-counter not_letter" style="text-align: center;">Join <span id="sig_number" style="text-align: center;" class ="not_letter">Some</span> Californians</p>
       <button id="submit_btn" type="submit" class="newblue btn btn-lg btn-primary petition_button not_letter" data-toggle="modal" data-target="#signup" onclick="$('#signup').modal();$('#cta').hide();" style="">SIGN THE LETTER</button>
     </div>
+        <div class="down sharecenter social-container" style="width: 248px">
+      <a data-count="0" href="https://twitter.com/share?url=https://shameonfeinstein.org/&text=Join a nonpartisan coalition demanding Senator Feinstein change course on the NSA."  target="_blank" id="twitter" class="twitter-button social-count">
+        <div id="stwit"></div>
+      </a>
+      <a data-count="0" href="https://www.facebook.com/share.php?u=https://shameonfeinstein.org/" id="facebook" target="_blank" class="social-count facebook-button">
+        <div id="sfb"></div>
+      </a>
+      <!--<a data-count="0" href="https://plus.google.com/share?url=Test" id="googleplus" target="_blank" class="social-count google-button"> -->
+      <!--  <div id="sgplus"></div>-->
+      <!--</a>-->
+  </div>
+    
+    
     <div id="share" class="social not-letter">
     <h2 class="not-letter" >Spread the word:</h2>
         <!-- Facebook -->
-        <a href="http://www.facebook.com/sharer.php?u=https://shameonfeinstein.org/" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>
+<!--        <a href="http://www.facebook.com/sharer.php?u=https://shameonfeinstein.org/" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>-->
 <!-- Twitter -->
-        <a href="http://twitter.com/share?url=https://shameonfeinstein.org/&text=Join a nonpartisan coalition demanding Senator Feinstein change course on the NSA." target="_blank"><img src="img/twitter.png" alt="Twitter" /></a>
+<!--        <a href="http://twitter.com/share?url=https://shameonfeinstein.org/&text=Join a nonpartisan coalition demanding Senator Feinstein change course on the NSA." target="_blank"><img src="img/twitter.png" alt="Twitter" /></a>-->
         <p class="text-center"><a href="resources.html">
         Promotional Resources
         </a> </p>
@@ -397,6 +411,15 @@ border-color: white;">SIGN THE LETTER</button>
     <script type='text/javascript' src="js/petition.js"></script>
     
     <script>  $('.sigcontainer').show(); $("#footnote-1").popover(); $("#footnote-2").popover();</script>
+    <script type="text/javascript">
+        $.ajax('http://23.239.0.254:3145/?networks=facebook,twitter,googleplus&url=https://shameonfeinstein.org', {
+          success: function (res, err) {
+            $.each(res, function(network, value){
+              $('#'+network).attr('data-count', value);
+            })      
+          }
+        })
+    </script>
   </body>
   
 
