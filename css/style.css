@@ -94,12 +94,13 @@ img {
   border-color:#00aeef;
 }
 
-.letter p h1 h2 h3 h4 h5 h6 { 
+.letter{
+
   font-family: 'Ubuntu','Arial', sans-serif;
   font-weight:400;
 }
 
-.not_letter p h1 h2 h3 h4 h5 h6 {  
+.not_letter {
   font-family: 'Montserrat', sans-serif;
   font-weight:700;
   
@@ -255,7 +256,7 @@ img {
 }
 
 .sig-counter {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Ubuntu','Arial', sans-serif;
   text-align: right;
   font-size: 20px;
   margin-top: 30px;
