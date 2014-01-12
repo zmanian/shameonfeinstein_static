@@ -17,14 +17,14 @@ ol {
   counter-reset:item;
   }
 ol>li {
-  margin-left:0px;
+  margin-left:0;
   padding:5%;
   counter-increment:item;
   list-style:none inside;
   margin-bottom:10px;
   background-color:#feecec;
   
-  text-indent: 0em;
+  text-indent: 0;
   }
   
 li>span{
@@ -59,14 +59,10 @@ body {
 }
 
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-size: 56px;
   font-weight: bold;
   margin-top: 55px;
-}
-
-h2 {
 }
 
 p {
@@ -84,7 +80,7 @@ strong{
 
 img {
   width: 94%;
-  margin-left: 0%;
+  margin-left: 0;
   margin-bottom: 10px;
 }
 
@@ -98,22 +94,25 @@ img {
   border-color:#00aeef;
 }
 
-.not_letter p h1 h2 h3 h4 h5 h6 {  
+.letter{
+
+  font-family: 'Ubuntu','Arial', sans-serif;
+  font-weight:400;
+}
+
+.not_letter {
   font-family: 'Montserrat', sans-serif;
   font-weight:700;
   
 }
 
-*{  
-  font-family: 'Ubuntu','Arial', sans-serif;
-  font-weight:400;
-  }
+/**{  */
+/*  font-family: 'Ubuntu','Arial', sans-serif;*/
+/*  font-weight:400;*/
+/*  }*/
 
 
-.letter{
-  font-family: 'Ubuntu','Arial', sans-serif;
-  font-weight:400;
-}
+
 
 
 .subtitle {
@@ -257,7 +256,7 @@ img {
 }
 
 .sig-counter {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Ubuntu','Arial', sans-serif;
   text-align: right;
   font-size: 20px;
   margin-top: 30px;
