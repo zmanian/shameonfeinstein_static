@@ -43,14 +43,14 @@
   display:inline;
 }
 .social-container a {
-  float: left;
+  /*float: left;*/
   margin:4px;
   width:54px;
   margin:4px;
   height:54px;
 }
 .social-container  div {
-  float: left;
+  /*float: left;*/
   width:54px;
   height:54px;
   background-color:black;
