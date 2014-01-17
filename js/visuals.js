@@ -123,23 +123,27 @@ window.viz.orderSignatures = function(){
 }
 
 window.viz.orderSignaturesWithWorker = function(){
+      var signhead = $('<div>',{id:"signhead",class:"col-sm-2"});
       var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
       var sortWorker = new Worker('js/doSort.js')
       sortWorker.addEventListener('message', function(e) {
         var i = 0;
         var col_id=0;
+        var current_column;
+
         while (e.data.length !== 0 ){
           var data_item =e.data.pop();
           if (viz.displayableSig(data_item)){
           if(i%3 === 0){
           col_id +=1;
-        var column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
-        $("#signhead").append(column);
+         current_column = $('<div>',{id:"subcol" +(col_id).toString(),class:"col-sm-2"});
+         signhead.append(current_column);
           }
-        viz.displaySignature(data_item,col_id,i+1);
+        viz.displaySignature(data_item,current_column,i+1);
         i++;
           }
         }
+        $('#signcontainer').append(signhead);
         setTimeout(function(x){$("#sig_elipse").hide("slow");},500*(i+1));
 
       }, false);
