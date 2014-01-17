@@ -76,7 +76,7 @@ window.viz.displaySignature = function(sigdata,current_column,timedelay){
     var zip = $('<div>',{id:"zip"}).text(sigdata.zip_code);
     var sigcontents = sigcontainer.append(firstname).append(br).append(lastname).append(zip);
     var sig_context = current_column.append(sigcontents);
-    return setTimeout(function (){sig_context.children("#sigcontainer").show("slow").fadeIn("slow");},500*timedelay)
+    return setTimeout(function (){sig_context.children("#sigcontainer").last().show("slow").fadeIn("slow");},500*timedelay)
   }
   else {
     var sigcontainer = $('<div>',{id:"sigcontainer",class:"sigcontainer"});
@@ -87,7 +87,7 @@ window.viz.displaySignature = function(sigdata,current_column,timedelay){
     if (sigdata.last === ""){ lastname = $('<br/>');}
     var sigcontents =sigcontainer.append(firstname).append(lastname).append(zip);
     var sig_context = current_column.append(sigcontents);
-    return setTimeout(function (){sig_context.children('#sigcontainer').show("slow").fadeIn("slow");;},500*timedelay)
+    return setTimeout(function (){sig_context.children('#sigcontainer').last().show("slow").fadeIn("slow");;},500*timedelay)
   }
 };
 
