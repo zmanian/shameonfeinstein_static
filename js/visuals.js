@@ -98,7 +98,7 @@ window.viz.displayableSig = function(sig_item){
 }
 
 window.viz.orderSignatures = function(){
-    var signhead = $('<div>',{id:"sigblock",class:""});
+    var signhead = $('<div>',{id:"signhead",class:""});
     var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
     var sig_data_sorted = sig_data.sort(viz.sigDateCompare);
     var i = 0;
@@ -118,12 +118,12 @@ window.viz.orderSignatures = function(){
 
       } 
     }
-        $('#signcontainer').append(signhead);
+        $('#sigblock').append(signhead);
         setTimeout(function(x){$("#sig_elipse").hide("slow");},500*(i+1));
 }
 
 window.viz.orderSignaturesWithWorker = function(){
-      var signhead = $('<div>',{id:"sigblock",class:""});
+      var signhead = $('<div>',{id:"signhead",class:""});
       var sig_data = viz.signature_data.concat(viz.signature_redacted_data);
       var sortWorker = new Worker('js/doSort.js')
       sortWorker.addEventListener('message', function(e) {
@@ -143,7 +143,7 @@ window.viz.orderSignaturesWithWorker = function(){
         i++;
           }
         }
-        $('#signcontainer').append(signhead);
+        $('#sigblock').append(signhead);
         setTimeout(function(x){$("#sig_elipse").hide("slow");},500*(i+1));
 
       }, false);
