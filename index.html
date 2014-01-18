@@ -193,27 +193,27 @@ border-color: white;">SIGN THE LETTER</button>
       <p class="sig-counter not_letter" style="text-align: center;">Join <span id="sig_number" style="text-align: center;" class ="not_letter">Some</span> Californians</p>
       <button id="submit_btn" type="submit" class="newblue btn btn-lg btn-primary petition_button not_letter" data-toggle="modal" data-target="#signup" onclick="$('#signup').modal();$('#cta').hide();" style="">SIGN THE LETTER</button>
     </div>
-    <div class="down sharecenter social-container" style="width: 248px">
+<!--     <div class="down sharecenter social-container" style="width: 248px">
       <a data-count="0" href="https://twitter.com/share?url=https://shameonfeinstein.org/&text=Join a nonpartisan coalition demanding Senator Feinstein change course on the NSA."  target="_blank" id="twitter" class="twitter-button social-count">
         <div id="stwit"></div>
       </a>
       <a data-count="0" href="https://www.facebook.com/share.php?u=https://shameonfeinstein.org/" id="facebook" target="_blank" class="social-count facebook-button">
         <div id="sfb"></div>
-      </a>
+      </a> -->
       <!--<a data-count="0" href="https://plus.google.com/share?url=Test" id="googleplus" target="_blank" class="social-count google-button"> -->
       <!--  <div id="sgplus"></div>-->
       <!--</a>-->
-  </div>
+  <!-- </div> -->
     <div id="share" class="social not-letter">
-    <!--<h2 class="not-letter" >Spread the word:</h2>-->
+    <h2 class="not-letter" >Spread the word:</h2>
 
     
     
 
         <!-- Facebook -->
-<!--        <a href="http://www.facebook.com/sharer.php?u=https://shameonfeinstein.org/" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>-->
+        <a href="http://www.facebook.com/sharer.php?u=https://shameonfeinstein.org/" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>
 <!-- Twitter -->
-<!--        <a href="http://twitter.com/share?url=https://shameonfeinstein.org/&text=Join a nonpartisan coalition demanding Senator Feinstein change course on the NSA." target="_blank"><img src="img/twitter.png" alt="Twitter" /></a>-->
+        <a href="http://twitter.com/share?url=https://shameonfeinstein.org/&text=Join a nonpartisan coalition demanding Senator Feinstein change course on the NSA." target="_blank"><img src="img/twitter.png" alt="Twitter" /></a>
         <p class="text-center"><a href="resources.html">
         Promotional Resources
         </a> </p>
@@ -336,6 +336,7 @@ border-color: white;">SIGN THE LETTER</button>
         <li><a href="http://lpvc.org/">Libertarian Party of Ventura County</a></li>
         <li><a href="http://www.nlgsf.org/">National Lawyers Guild SF Bay Area Chapter</a></li>
         <li><a href="http://sf99percent.org/">San Francisco 99% Coalition</a></li>
+        <li><a href="http://wellstoneclub.org/">Wellstone Democratic Renewal Club</a></li>
       </ul>
       <p class="letter"><a href="org_signup.html">Organizations: sign the letter using this link.</a></p>
         <p class="sig-counter letter"style="text-align:left; color: black; font-size:18px"> Also signed by <span id="sig_number_2">some</span> Californians.</p>
@@ -350,7 +351,7 @@ border-color: white;">SIGN THE LETTER</button>
                   <!--<h1 class="sigcontainer" style="font-size: 18px;">The signatures are below:</h1>-->
         </div></div>
     <div class ="row">
-      <div id='signcontainer' class ="col-md-12">
+      <div id='sigblock' class ="col-md-12">
       
         <!--<div id = "signhead" class="signatures">-->
         
@@ -415,13 +416,13 @@ border-color: white;">SIGN THE LETTER</button>
     
     <script>  $('.sigcontainer').show(); $("#footnote-1").popover(); $("#footnote-2").popover();</script>
     <script type="text/javascript">
-        $.ajax('http://23.239.0.254:3145/?networks=facebook,twitter,googleplus&url=https://shameonfeinstein.org', {
-          success: function (res, err) {
-            $.each(res, function(network, value){
-              $('#'+network).attr('data-count', value);
-            })      
-          }
-        })
+        // $.ajax('http://23.239.0.254:3145/?networks=facebook,twitter,googleplus&url=https://shameonfeinstein.org', {
+        //   success: function (res, err) {
+        //     $.each(res, function(network, value){
+        //       $('#'+network).attr('data-count', value);
+        //     })      
+        //   }
+        // })
     </script>
   </body>
   
