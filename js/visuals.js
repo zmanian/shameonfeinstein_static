@@ -33,10 +33,10 @@ window.viz.getSingaturesRedacted = function(){
 window.viz.updateSignatureCount = function(total_count){
   // setTimeout(function(){$('#sig_number').text(total_count).fadeIn("slow");},100); 
   // setTimeout(function(){$('#sig_number_2').text(total_count).fadeIn("slow");},100); 
-  var sign_num = new countUp("sig_number",0 , total_count, 0, 5);
-  var sign_num_2 = new countUp("sig_number_2",0 , total_count, 0, 5);
-  sin_num.start();
-  sin_num_2.start();
+  var sig_num = new countUp("sig_number",0 , total_count, 0, 5);
+  var sig_num_2 = new countUp("sig_number_2",0 , total_count, 0, 5);
+  sig_num.start();
+  sig_num_2.start();
   
 };
 
