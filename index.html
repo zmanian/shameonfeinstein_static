@@ -49,7 +49,7 @@
         <strong>Something went wrong. </strong> Let us know on <a href="https://github.com/ShameOnFeinstein/shameonfeinstein.github.io/issues">Github</a>
     </div>
 
-    <div id="credits" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="credits" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Credits" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -85,7 +85,7 @@
     </div>
     <!-- /.modal -->
 
-    <div id="safe" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="safe" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Is This Safe" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -117,7 +117,7 @@
 
 
 
-    <div id="signup" class="modal fade" tabindex="-1"  aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="signup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Sign the Letter" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -216,6 +216,45 @@ border-color: white;">SIGN THE LETTER</button>
                 <p class="sig-counter not_letter" style="text-align: center;">Join <span id="sig_number" style="text-align: center;" class="not_letter">Some</span> Californians</p>
                 <button id="submit_btn" type="submit" class="newblue btn btn-lg btn-primary petition_button not_letter" data-toggle="modal" data-target="#signup" onclick="$('#signup').modal();$('#cta').hide();" style="">SIGN THE LETTER</button>
             </div>
+
+            <div id="htmlFallback">
+                <form id="signatureForm" action="/sign" method="POST">
+                    <div id="email_group" class="form-group">
+                        <label class="required" for="email">Email Address (Required)</label>
+                        <input name="email" type="email" class="form-control required" id="email" placeholder="Email Address" onchange="window.petition.validEmail();" />
+                        <span id="email_help_block" class="help-block">We validate and then discard your email.</span>
+                    </div>
+                    <div id="zip_group" class="form-group">
+                        <label class="optional" for="zip">Zip Code (Required)</label>
+                        <input name="zip_code" type="text" class="form-control required" id="zip" placeholder="Zip Code" onchange="window.petition.validZip();" />
+                        <span id="zip_help_block" class="help-block">The letter is from California voters.</span>
+                    </div>
+                    <br/>
+                    <label class="optional">First and Last Name (Optional)</label>
+                    <div id="name_group" class="form-inline">
+                        <div class="form-group">
+                            <label class="optional sr-only" for="first">First Name</label>
+                            <input name="first" type="text" class="form-control" id="first_name" placeholder="First Name (Optional)" />
+                        </div>
+                        <div class="form-group">
+                            <label class="optional sr-only" for="last">Last Name</label>
+                            <input name="last" type="text" class="form-control" id="last_name" placeholder="Last Name (Optional)" />
+
+
+
+
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox">
+                                <input id="redacted" name="redacted" type="checkbox" name="form-control" value="1">hide name</label>
+                        </div>
+
+                        <span id="name_help_block" class="help-block">If you include your name, we will be able to show your signature to Senator Feinstein. Redacted names will not be shown on the website.</span>
+                <button type="button" type="submit" class="newblue petition_button btn btn-primary" style="">SIGN THE LETTER</button>
+            </form>
+            </div>
+
+
             <div id="scroll_down" class="text-center">
             <p class="not-letter text-center" style="color:#00aeef;">Scroll Down to the Letter</p>
               <i class="fa fa-arrow-circle-down fa-3x" style="color:#00aeef;"></i> 
@@ -509,9 +548,7 @@ border-color: white;">SIGN THE LETTER</button>
     <script type='text/javascript' src="js/petition.js"></script>
 
     <script>
-        $('#signup').modal();
-        $('#safe').modal();
-        $('#credits').modal();
+        $('#htmlFallback').hide();
         $('.sigcontainer').show();
         $("#footnote-1").popover();
         $("#footnote-2").popover();
