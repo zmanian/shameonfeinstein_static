@@ -170,7 +170,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="newblue petition_button btn btn-default" data-dismiss="modal" onclick="$('#cta').show();">CLOSE</button>
-                    <button type="button" type="submit" class="newblue petition_button btn btn-primary" onclick="window.petition.submitSingature()" style="">SIGN THE LETTER</button>
+                    <button type="submit" class="newblue petition_button btn btn-primary" onclick="window.petition.submitSingature()" style="">SIGN THE LETTER</button>
                 </form>
 
 
@@ -218,7 +218,7 @@ border-color: white;">SIGN THE LETTER</button>
             </div>
 
             <div id="htmlFallback">
-                <form id="signatureForm" action="sign" method="POST">
+                <form id="signatureFormFallback" action="sign" method="POST">
                     <div id="email_group" class="form-group">
                         <label class="required" for="email">Email Address (Required)</label>
                         <input name="email" type="email" class="form-control required" id="email" placeholder="Email Address" onchange="window.petition.validEmail();" />
@@ -250,7 +250,7 @@ border-color: white;">SIGN THE LETTER</button>
                         </div>
 
                         <span id="name_help_block" class="help-block">If you include your name, we will be able to show your signature to Senator Feinstein. Redacted names will not be shown on the website.</span>
-                <button type="button" type="submit" class="newblue petition_button btn btn-primary" style="">SIGN THE LETTER</button>
+                <button type="submit" class="newblue petition_button btn btn-primary" style="">SIGN THE LETTER</button>
             </form>
             </div>
 
