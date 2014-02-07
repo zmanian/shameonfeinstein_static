@@ -600,7 +600,10 @@ border-color: white;">SIGN THE LETTER</button>
     
     
 <!--[if !(lte IE 8)]><!-->
-<script type="text/javascript"> 
+<script type="text/javascript">
+
+
+  function tdwfb_monkey_patch(){debugger;};
   // The defaults are set below
   var tdwfb_config = {
     greeting: 'Let Senator Feinstein know what you think!', // Sets the salutation at the top left
@@ -610,7 +613,8 @@ border-color: white;">SIGN THE LETTER</button>
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
     e.src = document.location.protocol + '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/widget.min.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);debugger;
+    e.onload = tdwfb_monkey_patch;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
   })();
 </script>
 <script type="text/javascript">
