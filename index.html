@@ -272,6 +272,11 @@ border-color: white;">SIGN THE LETTER</button>
                 <!--  <div id="sgplus"></div>-->
                 <!--</a>-->
                 <!-- </div> -->
+            <p class="text-center"><a href="https://writeyourrep.org/shameonfeinstein/">
+            Send Feinstein your throughts in snail mail for $2
+            </a> 
+            </p>
+
                 <div id="share" class="social not-letter">
                     <h2 class="not-letter">Spread the word:</h2>
 
@@ -602,8 +607,6 @@ border-color: white;">SIGN THE LETTER</button>
 <!--[if !(lte IE 8)]><!-->
 <script type="text/javascript">
 
-
-  function tdwfb_monkey_patch(){debugger;};
   // The defaults are set below
   var tdwfb_config = {
     greeting: 'Let Senator Feinstein know what you think!', // Sets the salutation at the top left
@@ -613,11 +616,13 @@ border-color: white;">SIGN THE LETTER</button>
   (function(){
     var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
     e.src = document.location.protocol + '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/widget.min.js';
-    e.onload = tdwfb_monkey_patch;
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
   })();
+  
+  
 </script>
 <script type="text/javascript">
+$('#cta').remove();
 </script>
 <!--<![endif]-->
 </body>
