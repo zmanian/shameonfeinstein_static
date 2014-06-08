@@ -157,7 +157,7 @@ window.viz.orderSignaturesWithWorker = function(){
 
 
 $( document ).ready( function(){
-  $.when(viz.getSignatures(), viz.getSingaturesRedacted() ).then(function(x){viz.displayData();});
+  viz.displayData();
   // viz.orderSignatures();
   // $('.alert').hide();
 } );
