@@ -157,6 +157,10 @@ window.viz.orderSignaturesWithWorker = function(){
 
 
 $( document ).ready( function(){
+  window.viz.signature_count = window.sigs.signature_count 
+  window.viz.signature_data = window.sigs.signature_data
+  window.viz.signature_count_redacted = window.sigs_redacted.signature_count_redacted
+  window.viz.signature_redacted_data = window.sigs_redacted.signature_redacted_data
   viz.displayData();
   // viz.orderSignatures();
   // $('.alert').hide();
