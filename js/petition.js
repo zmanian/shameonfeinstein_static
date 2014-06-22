@@ -123,53 +123,53 @@ window.petition.validZip = function(){
 }
 
 window.petition.submitSingature = function(){
-//the post endpoint will return 200 if all goes well and a confirmation email has been sent 
-// 400 if the email is already in the database 
-// 420 if rate limiting is exceeded 
-// 500 if something goes wrong 
-  if($('#redacted').is(':checked')){ //Get 0 for redacted in the post instead of empty
-    $("#redactedHidden").prop('disabled', true);
-  }
-  else{
-    $("#redactedHidden").prop('disabled', false);
-  }
-  if (isRFC822ValidEmail($('#email').val()) && isValidCAZip($('#zip').val())){
-    $('#signup').modal('hide');
-    console.log($('#signatureForm').serialize());
-    $.ajax({
-      url:"/sign",
-      type:"post",
-      data:$('#signatureForm').serialize(),
-      statusCode:{
-        200:function(){
-          $('#checkoyouremail').show();
-        },
-        401:function(){
-          $('#alreadysigned').show();
-        },
-        420:function(){
-          $('#toomanysignatures').show();
-        },
-        500:function(){
-          $('#somethingwentwrong').show();
-        }
-      }
-    }
-    ).fail(function(){$('#somethingwentwrong').show(); $('#cta').show()}) ;
-  }
-  else{
-    alert("Please correct the errors in your form");
-    return;
-  }
+// //the post endpoint will return 200 if all goes well and a confirmation email has been sent 
+// // 400 if the email is already in the database 
+// // 420 if rate limiting is exceeded 
+// // 500 if something goes wrong 
+//   if($('#redacted').is(':checked')){ //Get 0 for redacted in the post instead of empty
+//     $("#redactedHidden").prop('disabled', true);
+//   }
+//   else{
+//     $("#redactedHidden").prop('disabled', false);
+//   }
+//   if (isRFC822ValidEmail($('#email').val()) && isValidCAZip($('#zip').val())){
+//     $('#signup').modal('hide');
+//     console.log($('#signatureForm').serialize());
+//     $.ajax({
+//       url:"/sign",
+//       type:"post",
+//       data:$('#signatureForm').serialize(),
+//       statusCode:{
+//         200:function(){
+//           $('#checkoyouremail').show();
+//         },
+//         401:function(){
+//           $('#alreadysigned').show();
+//         },
+//         420:function(){
+//           $('#toomanysignatures').show();
+//         },
+//         500:function(){
+//           $('#somethingwentwrong').show();
+//         }
+//       }
+//     }
+//     ).fail(function(){$('#somethingwentwrong').show(); $('#cta').show()}) ;
+//   }
+//   else{
+//     alert("Please correct the errors in your form");
+//     return;
+//   }
 
-}
+// }
 
-$(function(){
-    $("[data-hide]").on("click", function(){
-        $("." + $(this).attr("data-hide")).hide();
-        // -or-, see below
-        // $(this).closest("." + $(this).attr("data-hide")).hide();
-    });
+// $(function(){
+//     $("[data-hide]").on("click", function(){
+//         $("." + $(this).attr("data-hide")).hide();
+//         // -or-, see below
+//         // $(this).closest("." + $(this).attr("data-hide")).hide();
+//     });
 });
 
 
